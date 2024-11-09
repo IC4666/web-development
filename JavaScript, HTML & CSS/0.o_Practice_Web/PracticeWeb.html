@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>IC's Todo App</title>
+</head>
+
+<body>
+
+
+
+	<script>
+		alert("Wellcome to my Website");
+		document.body.innerHTML = "Hello from IC";
+		document.write("<h1> Hi, Its IC</h1>");
+		console.log("25th March 2023, The day I started learning Javascript");
+		/* to display output */
+
+		let w = "Click me",
+			x = "I am fasting.",
+			y = "It is the month of Ramadan.",
+			z = "01969281606";
+		/* we just made 4 variable */
+
+
+		let arr = ["I'm Imon", "I'm 22 years old", "I live in Dhaka", "I love you Allah"];
+		/* we just made an array variable */
+		arr.push("I'm a student of BUBT");
+		/* arr.pop();    push() methode adds value and pop() methode removes last added value*/
+
+		function todo(a) {  /* Created a function called 'todo' */
+
+			let element = document.createElement('div');
+			element.innerText = a;
+			document.body.appendChild(element);
+
+		};
+
+
+		todo(x);  		/* Passing parameters to the 'todo' function */
+		todo(y);
+		todo(z);
+		todo(w);
+		todo('wow! I just created a function.');
+
+		todo(arr); 		/* Passing arrays to the 'todo' function */
+		todo(arr[0]);
+		todo(arr[1]);
+		todo(arr[2]);
+		todo(arr[3]);
+		todo(arr[4]);
+
+
+
+
+		let anotherArray = ["I'm Sleepy", "I want to sleep", "but I also want to learn coding", "Allah please help me."]; /* we just made an array variable */
+
+		anotherArray.forEach(function (anotherArrayItems) {
+
+			let element = document.createElement('div');
+			element.innerText = anotherArrayItems;
+			document.body.appendChild(element);
+		});
+	/* anotherArray.forEach(function (anotherArrayItems){ //body } ); here forEach() is a loop methode	*/
+
+
+
+
+
+
+
+
+
+	</script>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+-->

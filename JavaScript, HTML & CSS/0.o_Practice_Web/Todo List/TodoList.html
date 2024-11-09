@@ -1,0 +1,138 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do</title>
+</head>
+
+<body>
+    <Header>
+        <h1>To-Do</h1>
+    </Header>
+
+    <main>
+        <input class="textBox" type="text" placeholder="Write what to-do">
+        <input class="dateBox" type="date">
+        <button class="addBtn">Add</button>
+    </main>
+    <section class="display">
+        Your have nothing To-do
+    </section>
+
+    <!-- -------------JavaScript------------ -->
+
+    <script>
+        let todo = [];
+            
+    
+        const btn = document.querySelector('.addBtn');
+        btn.addEventListener('click', () => {
+            addTodo();
+        });
+    
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                addTodo();
+            }
+        });
+    
+        function addTodo() {
+            let txt = document.querySelector('.textBox').value;
+            let dat = document.querySelector('.dateBox').value;
+    
+            if (txt && dat) {
+                todo.push({todoName:txt, todoDate:dat});  
+                /*pushing object to the array, cn also be written as
+                todo.push({txt:txt, dat:dat});
+                todo.push({txt, dat});
+                */
+    
+                updateTodoList();
+            } else {
+                alert('Please enter your todo properly');
+            }
+        }
+    
+        function removeTodo(index) {
+            todo.splice(index, 2);
+    
+            updateTodoList();
+        }
+    
+        function updateTodoList() {
+            let todoList = '';
+    
+            for (let i = 0; i < todo.length; i++) {
+                let items = `<input type="checkbox">${todo[i].todoName+' '+todo[i].todoDate}
+                    <button onclick="removeTodo(${i})"> Remove</button>
+                    <br>`;
+                todoList += items;
+            }
+    
+            const display = document.querySelector('.display');
+            display.innerHTML = todoList;
+        }
+    </script>
+    
+    
+
+    <!-- <script>
+        let todo = [], 
+        todoDate = [];
+
+        const btn = document.querySelector('.addBtn');
+        btn.addEventListener('click', () => {
+            addTodo();
+        })
+        
+        document.addEventListener('keydown',()=>{
+            if(event.key==='Enter'){
+                addTodo()}
+            })
+
+        function addTodo(){
+            
+            let txt = document.querySelector('.textBox').value;
+            let dat = document.querySelector('.dateBox').value;
+
+            if (txt && dat) {
+
+                todo.push(txt);
+                todoDate.push(dat);
+
+                console.log(txt, dat);
+
+                let todoList = '';
+
+                for (let i = 0; i < todo.length; i++) {
+
+                    let items = `<input type = "checkbox">${todo[i] + ' ' + todoDate[i]}
+                    <button onclick="removeTodo(${i})"> Remove</button>
+                    <br>`;
+                    todoList += items;
+                }
+
+                const display = document.querySelector('.display');
+                display.innerHTML = todoList;
+                console.log(todoList);
+            }
+            else {
+                alert("Please enter your todo Properly");
+            }
+
+        }
+
+        function removeTodo(index) {
+        todo.splice(index, 1);
+        todoDate.splice(index, 1);
+        addTodo();
+        }
+        
+    </script> -->
+
+
+
+</body>
+
+</html>

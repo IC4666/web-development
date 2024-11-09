@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+     
+    <button class="mode" onclick="Mode() ">Light</button>
+    <button  onclick="greet() ">Welcome</button>
+
+
+    <div>
+        <h1>Amazon Shipping Calculator</h1>
+        <input type="text" class="inp" placeholder="enter velue to calculate"
+            onkeydown="if (event.key==='Enter') cartCal()">
+        <button onclick="cartCal()">Calculate</button>
+        <p class="res"> </p>
+    </div>
+
+    <div>
+        <h1>Form</h1>
+        <input type="text" class="nam" placeholder="enter your name" maxlength="30"
+            onkeydown=" if(event.key=== 'Enter') nam()">
+        <button onclick="nam()">Submit</button>
+        <p class="out"> </p>
+    </div>
+
+    <div>
+        <h1>Live text</h1>
+        <input type="text" class="tex" placeholder="write here" onkeyup="txt()">
+        <h3 class="textOutput"></h3>
+    </div>
+
+    <div style="user-select: none; height: 500px; width: 206px;">
+        <h1>Calculator</h1>
+        <input type="text" class="butOutput" maxlength="3">
+        <button onclick="calc()">=</button><br>
+       
+        <div style=" display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; column-gap: 10px; row-gap:10px; margin-top: 10px;">
+            <button value="1" onclick="cal(value)"> 1 </button>
+            <button value="2" onclick="cal(value)"> 2 </button>
+            <button value="3" onclick="cal(value)"> 3 </button>
+            <button value="*" onclick="cal(value)"> × </button>
+            <button value="4" onclick="cal(value)"> 4 </button>
+            <button value="5" onclick="cal(value)"> 5 </button>
+            <button value="6" onclick="cal(value)"> 6 </button>
+            <button value="/" onclick="cal(value)"> ÷ </button>
+            <button value="7" onclick="cal(value)"> 7 </button>
+            <button value="8" onclick="cal(value)"> 8 </button>
+            <button value="9" onclick="cal(value)"> 9 </button>
+            <button value="-" onclick="cal(value)"> – </button>
+            <button value="00" onclick="cal(value)"> 00 </button>
+            <button value="0" onclick="cal(value)"> 0 </button>
+            <button value="." onclick="cal(value)"> . </button>
+            <button value="+" onclick="cal(value)"> + </button> <br>
+
+            <button onclick=" document.querySelector('.butOutput').value= ' ' "> AC </button> 
+            <button value="←"
+                onclick=" document.querySelector('.butOutput').value = document.querySelector('.butOutput').value.toString().slice(0,-1) "> ← </button>
+        </div>
+
+
+    </div>
+
+
+    <!-- ------------------------------------ -->
+    <script>
+function greet(){
+    const username = window.prompt("Tell me your name");
+    alert("Welcome "+ username);
+}
+
+ function Mode() {
+            let body = document.body;
+            let modeButton = document.querySelector('.mode');
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                modeButton.innerHTML = 'Light';
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                modeButton.innerHTML = 'Dark';
+            }
+        }
+
+        function cartCal() {
+            let priceIn = Number(document.querySelector('.inp').value);
+
+            // console.log(typeof (priceIn));
+            if (priceIn < 30 && priceIn > 0) {
+                priceIn = priceIn + 10;
+            }
+            document.querySelector('.res').innerHTML = ` ${priceIn.toFixed(2)} ৳`;
+        }
+
+        function nam() {
+            let nameIn = document.querySelector('.nam').value;
+            let abc = nameIn.replace(/(^\w|\s\w)/g, (match) => match.toUpperCase());
+            document.querySelector('.out').innerHTML = abc;
+        }
+
+        function txt() {
+            let texIn = document.querySelector('.tex').value;
+            document.querySelector('.textOutput').innerHTML = texIn;
+        }
+
+        function cal(val) {
+            document.querySelector('.butOutput').value += val;
+        }
+
+        function calc() {
+            let num = document.querySelector(".butOutput").value;
+
+            document.querySelector(".butOutput").value = eval(num);
+        }
+
+    </script>
+
+    <!-- ------------------------------------ -->
+    <style>
+
+.dark-mode{
+    /* background-image: url(https://media4.giphy.com/media/3oEduJ660ezNfF4uOs/giphy.gif); */
+    background-image: url(https://media1.giphy.com/media/JuW5fJTd4B1hC/giphy.gif);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(0, 0, 0);
+    color: white;
+
+}
+
+.light-mode{
+    background: fixed;
+
+
+}
+
+    </style>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

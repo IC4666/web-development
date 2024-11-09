@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+              <title>Calculator</title>
+	<link rel="icon" href="D:\DOCUMENTS\Codes\HTML\Calculator App\icons8-calculator-96.png">
+	<link rel="stylesheet" href="Calculator.css" />
+</head>
+
+
+<body>
+  <div class="calculator-container">
+    <div>
+	  <input type="text" id="result" maxlength="3" />
+	</div>
+
+     <br><br>
+     <div class="buttons">
+		 
+		 <input class="buttonW" type="button" value="AC" onclick="document.getElementById('result').value =' ' "/>
+		 <input class="buttonW" type="button" value="←" onclick="document.getElementById('result').value = result.value.toString().slice(0,-1)"/>
+      	<input class="buttonW" type="button" value="%" onclick="document.getElementById('result').value+='/100' "/>
+		  <input class="buttonO" type="button" value="÷" onclick="document.getElementById('result').value+='/' "/>
+		  
+		  
+      	<input class="buttonG" type="button" value="1" onclick="document.getElementById('result').value+='1' "/>
+      	<input class="buttonG" type="button" value="2" onclick="document.getElementById('result').value+='2' "/>
+      	<input class="buttonG" type="button" value="3" onclick="document.getElementById('result').value+='3' "/>
+    	<input class="buttonO" type="button" value="×" onclick="document.getElementById('result').value+='*' "/>
+
+
+		<input class="buttonG" type="button" value="4" onclick="document.getElementById('result').value+='4' "/>
+      	<input class="buttonG" type="button" value="5" onclick="document.getElementById('result').value+='5' "/>
+      	<input class="buttonG" type="button" value="6" onclick="document.getElementById('result').value+='6' "/>
+      	<input class="buttonO" type="button" value="−" onclick="document.getElementById('result').value+='-' "/>
+
+		<input class="buttonG" type="button" value="7" onclick="document.getElementById('result').value+='7' "/>
+      	<input class="buttonG" type="button" value="8" onclick="document.getElementById('result').value+='8' "/>
+      	<input class="buttonG" type="button" value="9" onclick="document.getElementById('result').value+='9' "/>
+      	<input class="buttonO" type="button" value="+" onclick="document.getElementById('result').value+='+' "/>
+
+
+		<input class="buttonW" type="button" value="00" onclick="document.getElementById('result').value+='00' "/>
+      	<input class="buttonG" type="button" value="0" onclick="document.getElementById('result').value+='0' "/>
+      	<input class="buttonW" type="button" value="." onclick="document.getElementById('result').value+='.' "/>
+     	<input class="buttonO" type="button" value="=" onclick="document.getElementById('result').value= eval(document.getElementById('result').value)"/>
+     </div>
+
+  </div>
+
+</body>
+</html>
+
+
+
+<!--     -->
