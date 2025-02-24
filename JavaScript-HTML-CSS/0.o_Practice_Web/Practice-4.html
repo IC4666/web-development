@@ -1,0 +1,103 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice-4</title>
+</head>
+
+<body>
+
+    <script>
+        const body = document.querySelector('body');
+        
+
+        for (let i = 0; i < 4; i++) {
+
+            const bgm = document.createElement('div');
+            bgm.className = 'bgm';
+            const header = document.createElement('h1');
+            header.textContent = 'Container';
+            bgm.appendChild(header);
+
+            const container = document.createElement('div');
+            container.className = 'container';
+            const head = document.createElement('h1');
+            head.textContent = 'Product';
+            container.appendChild(head);
+
+            bgm.appendChild(container);
+
+            body.appendChild(bgm);
+        }
+    </script>
+
+
+    <style>
+        html {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        body {
+          
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-image: url("background.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+
+        }
+
+
+
+        .container {
+            width: 500px;
+            height: 500px;
+            border-radius: 30px;
+            background-color: rgba(255, 255, 255, 0.014);
+            filter: brightness(200%) saturate(120%);
+            backdrop-filter: blur(80px);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1;
+            /* Ensures container stays above */
+            position: relative;
+            margin: 30px;
+            overflow: hidden;
+            /* Hides any overflow from ::before */
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+
+            background: red;
+            z-index: -1;
+            /* Moves it behind the container */
+            animation: spin 3s linear infinite;
+        }
+
+
+        h1 {
+            color: rgba(255, 255, 255, 0.103);
+            -webkit-text-stroke: 3px rgb(255, 255, 255);
+            font-size: 4rem;
+            text-align: center;
+            letter-spacing: 10px;
+            filter: brightness(150%) saturate(150%);
+
+        }
+    </style>
+</body>
+
+</html>

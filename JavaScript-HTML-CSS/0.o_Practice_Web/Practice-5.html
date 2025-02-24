@@ -1,0 +1,286 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice-5</title>
+</head>
+
+<body>
+
+    <div class="btn">
+        <button class="mode">Dark</button>
+        <button onclick="align()" value="left">Left</button>
+        <button onclick="align()" value="center">Center</button>
+        <button onclick="align()" value="right">Right</button>
+        <input type="color" class="colorPicker" value="#001aff">
+    </div>
+
+    
+    <div class="container">
+
+        <div class="card">
+            <h1>Animate Border</h1>
+            <p>Animated borders can add an engaging and lively element to your projects. They can be used to highlight
+                important sections of a webpage, create a fun and interactive user experience, or simply to add a bit of
+                flair to your work.</p>
+        </div>
+
+        <div class="card">
+            <h1>Animate Border</h1>
+            <p>Animated borders can add an engaging and lively element to your projects. They can be used to highlight
+                important sections of a webpage, create a fun and interactive user experience, or simply to add a bit of
+                flair to your work.</p>
+        </div>
+
+    </div>
+
+
+    <script>
+        const mode = document.querySelector('.mode');
+        const body = document.querySelector('body');
+        const left = document.querySelector('.left');
+        const center = document.querySelector('.center');
+        const right = document.querySelector('.right');
+        const card = document.querySelectorAll('.card');
+        const colorPicker = document.querySelector('.colorPicker');
+
+
+        mode.addEventListener('click', () => {
+            body.classList.toggle('light-mode-body');
+            
+            card.forEach((item) => {
+                item.classList.toggle('light-mode');
+            });
+
+            // document.querySelectorAll('h1, p').forEach((item) => 
+            document.querySelectorAll('h1').forEach((item) => {
+                item.classList.remove('text-animation');// Reset class to restart animation
+                void item.offsetWidth; // Force reflow to restart animation
+                item.classList.toggle('text-animation');
+            });
+
+
+            document.querySelectorAll('button').forEach((item) => {
+                item.classList.toggle('light-mode');
+            });
+
+            if (mode.textContent === 'Dark') {
+                mode.textContent = 'Light';
+            } else {
+                mode.textContent = 'Dark';
+            }
+        });
+
+        function align() {
+            card.forEach((item) => {
+                item.style.textAlign = event.target.value;
+            });
+        }  
+
+        // left.addEventListener('click', () => {
+        //     card.forEach((item) => {
+        //         item.style.textAlign = left.value;
+        //     });
+        // });
+
+        // center.addEventListener('click', () => {
+        //     card.forEach((item) => {
+        //         item.style.textAlign = center.value;
+        //     });
+        // });
+
+        // right.addEventListener('click', () => {
+        //     card.forEach((item) => {
+        //         item.style.textAlign = right.value;
+        //     });
+        // });
+
+        colorPicker.addEventListener('input', () => {
+            card[1].style.setProperty("--border-color", colorPicker.value);
+            
+        });
+    </script>
+
+
+
+    <style>
+        @property --angle {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: .15s ease;
+        }
+
+        body {
+            background: rgb(31, 31, 31);
+            /* background: rgb(31, 31, 31); */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+
+        }
+
+        
+        button {
+            height: 50px;
+            padding: 0px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 30px;
+            background-color: rgb(37, 37, 37);
+            color: white;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: inset 0 0 10px rgb(114, 114, 114);
+            }
+
+            &:active {
+                box-shadow: inset 0 0 40px rgb(114, 114, 114);
+                font-size: 2rem; ;
+                /* scale: 0.9; */
+            }
+        }
+
+        .colorPicker {
+            width: 30px;
+            height: 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+
+        }
+
+        /* Hide the default color picker arrow in some browsers  */
+        .colorPicker::-webkit-color-swatch-wrapper {
+            padding: 5px;
+            /* background-color: rgb(37, 37, 37); */
+
+        }
+
+        .colorPicker::-webkit-color-swatch {
+            border: none;
+            border-radius: 50px;
+      
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+        }
+
+        .card {
+            width: 400px;
+            height: 400px;
+            border-radius: 30px;
+            background-color: rgb(37, 37, 37);
+            padding: 30px;
+            border-radius: 30px;
+            position: relative;
+            text-align: center;
+            transition: all .5s ease;
+        }
+
+        .card:nth-child(1)::after,
+        .card:nth-child(1)::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background: conic-gradient(from var(--angle), #f3ec78, #af4261, #577399, #2b4f81, #f3ec78);
+            padding: 5px;
+            border-radius: 35px;
+            animation: animate 2s linear infinite;
+        }
+
+        .card:nth-child(1)::before {
+            filter: blur(30px);
+        }
+
+        .card:nth-child(2)::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background: conic-gradient(from var(--angle), transparent 80%, var(--border-color, #001aff));
+            padding: 5px;
+            border-radius: 35px;
+            animation: animate 2s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                --angle: 0deg;
+            }
+            100% {
+                --angle: 360deg
+            }
+        }
+
+        p,
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;           
+
+        }
+
+
+/* for light mode */
+
+        .light-mode{
+            background-color: rgb(240, 240, 240);
+            color: black;
+        }
+
+        .light-mode-body{
+            background-color: rgb(218, 218, 218);
+            color: black;
+        }
+
+        .text-animation{
+            animation: text .5s ease-in-out ;
+        }
+
+        @keyframes text{
+            0%{
+                transform: rotateX(0deg);
+            }
+            100%{
+                transform: rotateX(360deg);
+            }
+        }
+
+
+    </style>
+</body>
+
+</html>

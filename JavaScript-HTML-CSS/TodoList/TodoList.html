@@ -1,0 +1,221 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do</title>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>To-Do</h1>
+    </header>
+
+    <main>
+        <input class="text-box" type="text" placeholder="Write what to-do">
+        <input class="date-box" type="date">
+
+
+        <button class="add-button">Add</button>
+    </main>
+
+    <section class="display">
+        Your have nothing To-do
+    </section>
+
+    <!-- -------------JavaScript------------ -->
+
+    <script>
+        let todo = [];
+
+
+        const btn = document.querySelector('.add-button');
+        btn.addEventListener('click', () => {
+            addTodo();
+        });
+
+        // document.addEventListener('keydown', (event) => {
+        //     if (event.key === 'Enter') {
+        //         addTodo();
+        //     }
+        // }); or you can write it as below, very short and simple
+        document.addEventListener('keydown', ({ key }) => key === 'Enter' && addTodo());
+
+
+
+        function addTodo() {
+            let txt = document.querySelector('.text-box').value;
+            let dat = document.querySelector('.date-box').value;
+
+            if (txt && dat) {
+                todo.push({ todoName: txt, todoDate: dat });
+                    /*pushing object to the array, cn also be written as
+                    todo.push({txt:txt, dat:dat});
+                    todo.push({txt, dat});
+                    */
+                
+                updateTodoList();
+                document.querySelector('.text-box').value = ' ';
+                document.querySelector('.date-box').value = ' ';
+            } 
+            else {
+                alert('Please enter your todo properly');
+            }
+
+        }
+
+
+        function updateTodoList() {
+            let todoList = '';
+
+            for (let i = 0; i < todo.length; i++) {
+                let items = `<input type="checkbox">${todo[i].todoName + ' ' + todo[i].todoDate}
+                    <button onclick="removeTodo(${i})"> Remove</button>
+                    <br>`;
+                todoList += items;
+            }
+
+            const display = document.querySelector('.display');
+            display.innerHTML = todoList;
+        }
+
+
+        function removeTodo(index) {
+            todo.splice(index, 1);
+
+            updateTodoList();
+        }
+
+    </script>
+
+<!-- -------------CSS------------ -->
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&display=swap');
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #f0f0f0;
+    }
+
+    header {
+        font-family: "DynaPuff", serif;
+        font-size: 30px;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 5px;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    input {
+        padding: 10px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .text-box {
+        width: 500px;
+    }
+
+    .add-button {
+        padding: 10px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: #333;
+        color: white;
+        cursor: pointer;
+    }
+
+    .display {
+        margin-top: 20px;
+        padding: 30px;
+        border-top: 1px solid #333;
+    }
+
+    .display input {
+        margin-right: 10px;
+    }
+
+    .display button {
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: #333;
+        color: white;
+        cursor: pointer;
+    }
+</style>
+
+    <!-- <script>
+        let todo = [], 
+        todoDate = [];
+
+        const btn = document.querySelector('.add-button');
+        btn.addEventListener('click', () => {
+            addTodo();
+        })
+        
+        document.addEventListener('keydown',()=>{
+            if(event.key==='Enter'){
+                addTodo()}
+            })
+
+        function addTodo(){
+            
+            let txt = document.querySelector('.text-box').value;
+            let dat = document.querySelector('.date-box').value;
+
+            if (txt && dat) {
+
+                todo.push(txt);
+                todoDate.push(dat);
+
+                console.log(txt, dat);
+
+                let todoList = '';
+
+                for (let i = 0; i < todo.length; i++) {
+
+                    let items = `<input type = "checkbox">${todo[i] + ' ' + todoDate[i]}
+                    <button onclick="removeTodo(${i})"> Remove</button>
+                    <br>`;
+                    todoList += items;
+                }
+
+                const display = document.querySelector('.display');
+                display.innerHTML = todoList;
+                console.log(todoList);
+            }
+            else {
+                alert("Please enter your todo Properly");
+            }
+
+        }
+
+        function removeTodo(index) {
+        todo.splice(index, 1);
+        todoDate.splice(index, 1);
+        addTodo();
+        }
+        
+    </script> -->
+
+
+
+</body>
+
+</html>

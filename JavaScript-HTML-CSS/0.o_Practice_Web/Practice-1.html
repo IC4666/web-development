@@ -1,0 +1,238 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice-1</title>
+</head>
+
+<body>
+
+    <button class="butt" id="draggable">Button</button>
+
+    <div>
+        <img src="redGirl.png" class="image im1">
+        <img src="redGirl2.png" class="image im2">
+
+    </div>
+
+
+    <div class="form-page bye">
+        <h1>Hello</h1>
+        <h3>My name is IC</h3>
+        <p>CSS Resizable Element </p>
+        <p>Samsung A34 Specs </p>
+        <p>Display : Type Super AMOLED, 120Hz</p>
+        <p>Size 6.6 inches, 106.9 cm2 (~84.9% screen-to-body ratio)</p>
+        <p>Resolution 1080 x 2340 pixels, 19.5:9 ratio (~390 ppi density)</p>
+        <p>Protection Corning Gorilla Glass 5</p>
+        <p>OS Android 13, One UI 5.1</p>
+        <p>Chipset Mediatek MT6877V Dimensity 1080 (6 nm)</p>
+        <p>CPU Octa-core (2x2.6 GHz Cortex-A78 & 6x2.0 GHz Cortex-A55)</p>
+        <p>GPU Mali-G68 MC4</p>
+        <p>Internal 128GB 6GB RAM, 128GB 8GB RAM, 256GB 8GB RAM</p>
+        <p>Type Li-Po 5000 mAh, non-removable</p>
+        <p>Samsung A54 Specs</p>
+        <p>Display : Super AMOLED, 120Hz, 1000 nits (HBM)</p>
+        <p>Size 6.4 inches, 100.5 cm2 (~82.9% screen-to-body ratio)</p>
+        <p>OS: Android 13, One UI 5.1</p>
+        <p>Chipset: Exynos 1380 (5 nm)</p>
+        <p>CPU: Octa-core (4x2.4 GHz Cortex-A78 & 4x2.0 GHz Cortex-A55)</p>
+        <p>GPU: Mali-G68 MP5</p>
+        <p>Battery: Li-Po 5000 mAh, non-removable</p>
+    </div>
+
+    <div class="door">
+        <h1>FUCK YOU!</h1>
+
+    </div>
+
+
+
+
+
+
+    <script>
+        const draggable = document.getElementById("draggable");
+
+        let offsetX = 0, offsetY = 0, isDragging = false;
+
+        draggable.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            offsetX = e.clientX - draggable.offsetLeft;
+            offsetY = e.clientY - draggable.offsetTop;
+            draggable.style.cursor = "grabbing";
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (isDragging) {
+                draggable.style.left = `${e.clientX - offsetX}px`;
+                draggable.style.top = `${e.clientY - offsetY}px`;
+            }
+        });
+
+        document.addEventListener("mouseup", () => {
+            isDragging = false;
+            draggable.style.cursor = "grab";
+        });
+
+
+        let formPage = document.querySelector('.form-page');
+        let btn = document.querySelector('.butt');
+
+        btn.addEventListener('click', () => {
+
+            if (formPage.classList.contains('bye')) {
+                formPage.classList.remove('bye');
+                formPage.classList.add('hi');
+            }
+            else {
+                formPage.classList.remove('hi');
+                formPage.classList.add('bye');
+            }
+
+        });
+
+    </script>
+
+
+
+    <style>
+
+body {
+            background: rgb(255, 255, 255);
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .door {
+            background-color: blueviolet;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            margin-bottom: 50px;
+            position: relative;
+            place-content: center;
+            text-align: center;
+        }
+
+        .door::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-color: rgb(255, 255, 255);
+            transition: 2s left ease;
+      
+        }
+
+        .door::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-color: rgb(255, 255, 255);
+            transition: 2s right ease;
+        }
+
+        .door:hover::before {
+                left: -50%;
+                
+            }
+        .door:hover::after{
+                right: -50%;
+            }
+
+
+
+        .form-page {
+
+            /* visibility: hidden; */
+            display: inline-block;
+            background: red;
+            resize: both;
+            overflow: auto;
+            max-width: 500px;
+            max-height: 500px;
+            min-width: 200px;
+            min-height: 200px;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 20px;
+            transform: scale(0);
+            transition: transform .5s ease, height .15s ease, width .15s ease;
+        }
+
+
+        .hi {
+            /* visibility: visible; */
+            transform: scale(1);
+        }
+
+        .bye {
+            transform: scale(0);
+
+        }
+
+
+        #draggable {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            cursor: grab;
+            display: inline;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0);
+            color: rgb(40, 40, 40);
+
+            width: 120px;
+            padding: 20px;
+            border: 0px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.178);
+            backdrop-filter: blur(10px);
+            font-weight: bolder;
+            text-align: center;
+            z-index: 99999;
+
+        }
+
+
+        img {
+            width: 300px;
+            height: 300px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.178);
+            user-select: none;
+            margin: 20px;
+        }
+
+        .im1 {
+            clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+            transition: 2s clip-path ease;
+
+
+            &:hover {
+                clip-path: polygon(0% 60%, 10% 20%, 50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%);
+            }
+        }
+
+
+        .im2 {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            transition: 1s border-radius ease;
+
+
+            &:hover {
+                border-radius: 74% 26% 41% 59% / 41% 54% 46% 59%
+            }
+        }
+    </style>
+</body>
+
+</html>

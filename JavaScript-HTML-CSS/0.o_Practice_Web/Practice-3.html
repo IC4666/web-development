@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+</head>
+
+<body>
+    <button class="btn-add">Add Message</button>
+    <button class="btn-remove">Remove</button>
+
+
+    <script>
+        const btnAdd = document.querySelector('.btn-add');
+        const btnRemove = document.querySelector('.btn-remove');
+    
+        let message = 0, interval = null;
+    
+        function updateTitle() {
+            if (message > 0) {
+                // Clear existing interval before starting a new one
+                clearInterval(interval);
+                
+                interval = setInterval(() => {
+                    document.title = document.title === "App" ? `(${message}) New Message` : "App";
+                }, 1000);
+            } else {
+                clearInterval(interval);
+                interval = null;
+                document.title = "App";
+            }
+        }
+    
+        btnAdd.addEventListener('click', () => {
+            message++;
+            updateTitle();
+        });
+    
+        btnRemove.addEventListener('click', () => {
+            if (message > 0) {
+                message = 0;
+                updateTitle();
+            }
+        });
+    </script>
+    

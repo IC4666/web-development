@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="hexagon.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+
+    <script>
+
+        const container = document.querySelector('.container');
+        for (let j = 0; j < 50; j++) {
+            const row = document.createElement('div');
+            row.className = 'row';
+
+            for (let i = 0; i < 100; i++) {
+                const hex = document.createElement('div');
+                hex.className = 'hex';
+                row.appendChild(hex);
+            }
+            container.appendChild(row);
+        }
+    </script>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            background-color: #000000;
+        }
+
+        .container {
+            margin-left: -50px;
+            overflow: hidden;
+            animation: animate 1s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(100, 1fr);
+            gap: 5px;
+            margin-top: -23px;
+        }
+
+        .row:nth-child(1) {
+            visibility: hidden;
+            height: 0px;
+        }
+
+        .row:nth-child(even) {
+            margin-left: 52px;
+        }
+
+        .hex {
+            height: 110px;
+            width: 100px;
+
+            clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+            /* scale: 0.9; */
+            /* background-color: #ff0000; */
+            transition: 2s;
+
+            &:hover {
+                background-color: lime;
+                /* transform: scale(1.2); */
+                transition: 0s;
+            }
+        }
+    </style>
+</body>
+
+</html>
