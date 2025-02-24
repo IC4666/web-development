@@ -42,19 +42,20 @@
 
         body
         {
-            margin: 50px;
-            padding: 0;
+            margin: 0;
+            padding: 50px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 50px;
+            background-color: #ffffff;
         }
 
         .grid-container1 .box {
             background-color: #00ff00;
             color: rgb(255, 255, 255);
-            padding: 20px;
+        
             font-size: 30px;
             text-align: center;
         }
@@ -62,7 +63,8 @@
         .grid-container1 {
 
             display: grid;
-            grid-template-columns: 300px 300px 300px 300px;
+            width: 100%;
+            grid-template-columns: repeat(4, 1fr);
             grid-template-rows: 300px 300px;
             grid-template-areas: 
                 'box1 box2 box2 box3'
@@ -74,7 +76,7 @@
 
         @media (max-width: 800px) {
             .grid-container1 {
-                grid-template-columns: 300px 300px ;
+                grid-template-columns: repeat(2, 1fr); ;
                 grid-template-rows: 300px 300px 300px 300px;
                 grid-template-areas: 
                     'box1 box3'
@@ -92,9 +94,9 @@
             text-align: center;
         }
         .grid-container2 {
-
+            width: 100%;
             display: grid;
-            grid-template-columns: 300px 300px 300px 300px;
+            grid-template-columns: repeat(4, 1fr);
             grid-template-rows: 300px 300px;
             grid-template-areas: 
                 'box1 box2 box2 box3'
@@ -113,9 +115,9 @@
         }
 
         .grid-container3 {
-
+            width: 100%;
             display: grid;
-            grid-template-columns: 300px 300px 300px 300px;
+            grid-template-columns: repeat(4, 1fr);
             grid-template-rows: 300px 300px;
             grid-template-areas: 
                 'box1 box1 box2 box3'
@@ -124,8 +126,6 @@
             background-color: var(--clr);
             padding: 10px;
         }
-
-
 
     </style>
     
