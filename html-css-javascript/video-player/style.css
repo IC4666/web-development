@@ -31,8 +31,8 @@ body {
 }
 
 .container-video {
-  width: 80vw;
-  margin: 100px auto;
+  width: 85vw;
+  margin: 120px auto;
   padding: 40px;
   border-radius: 60px;
   background: rgb(230, 230, 230);
@@ -90,6 +90,10 @@ video {
 }
 
 @media(max-width: 768px) {
+
+  .header {
+    left: 0px;
+  }
  
   .container-video {
     grid-template-columns: repeat(1, 1fr);
