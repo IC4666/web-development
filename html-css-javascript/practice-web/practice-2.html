@@ -1,0 +1,162 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Animation</title>
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Something Awesome</h1>
+        <div class="bar"></div>
+
+        <p> The James Webb Space Telescope's latest discovery revealed the presence of water vapor in a distant
+            exoplanet's atmosphere.
+            <span class="hidden-span">This finding suggests the possibility of habitable conditions and further insights
+                into the potential for extraterrestrial life. A new era of space exploration begins.
+            </span>
+        </p>
+
+        <button class="btn">Show more</button>
+    </div>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(0, 0, 20);
+
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            padding: 20px;
+            margin: 20px;
+            background: linear-gradient(210deg, #020030, #200000);
+            border: 1px solid #62cdff;
+            border-radius: 25px;
+            box-shadow: 0 0 50px rgb(0, 0, 0);
+            overflow: auto;
+            transition: all 2s ease;
+        }
+
+        .card::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari */
+        }
+
+        .bar {
+            width: 0px;
+            height: 5px;
+            background-color: #00aeff;
+            margin: 10px 0;
+            transition: all 1s ease;
+            /* animation: gradient 5s linear infinite; */
+        }
+
+        h1 {
+            margin-top: 300px;
+            color: rgb(255, 143, 143);
+
+            transition: all 1.5s ease 1s;
+            animation: gradient 2s linear infinite;
+        }
+
+        p {
+            color: #7a97a5;
+            font-size: 16px;
+            line-height: 1.6;
+            opacity: 0;
+
+            transition: all 2s ease;
+            transition: opacity 2s ease 1.5s;
+
+            &:hover {
+                color: #00aeff;
+                animation: gradient 2s linear infinite;
+            }
+        }
+
+        .hidden-span {
+            display: none;
+            transition: all 2s ease;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #0099ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            user-select: none;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 2s ease 1s, transform 2s ease 1s;
+        }
+
+
+
+        /* hover animation */
+
+        @keyframes gradient {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        .card:hover {
+
+            animation: gradient 3s linear;
+        }
+
+        .card:hover h1 {
+            margin-top: 80px;
+        }
+
+        .card:hover .bar {
+            width: 100%;
+        }
+
+        .card:hover p {
+            opacity: 1;
+        }
+
+        .card:hover button {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    </style>
+
+    <script>
+        const btn = document.querySelector('.btn');
+        const span = document.querySelector('.hidden-span');
+
+        btn.addEventListener('click', () => {
+
+            if (btn.textContent === 'Show more') {
+                btn.textContent = 'Show less';
+                span.style.display = 'inline';
+            } else {
+                btn.textContent = 'Show more';
+                span.style.display = 'none';
+            }
+
+            // btn.textContent = btn.textContent === 'Show more' ? 'Show less' : 'Show more';
+            // span.style.display = span.style.display === 'none' ? 'inline' : 'none';
+        });
+    </script>
+
+</body>
+
+</html>
