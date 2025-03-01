@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Border Radius</title>
 
     <!-- Prism Code Snippet CSS Link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    <!-- Google font icons CSS Link-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" />
+
 </head>
 
 <body>
+    <nav>
+        <button class="mode">
+            <span class="material-symbols-outlined mode-icon">dark_mode</span>
+        </button>
+    </nav>
+
+
     <section>
         <h1>Proportional Border Radius</h1>
         <p>You can use this formula when there's padding between the parent and child elements to keep the proportions
@@ -20,11 +30,11 @@
 
     <section>
         <h2>Formulas :</h2>
-        <div class="formula">
+        <div class="card formula">
             <h3>child-radius = calc(parent-radius - padding)</h3>
             <h3>parent-radius = calc(child-radius + padding)</h3>
         </div>
-    
+
     </section>
 
 
@@ -53,7 +63,7 @@
 
     <section>
         <h2>Example :</h2>
-        <div class="parent">
+        <div class="card parent ">
             <p>The child's border-radius is reduced by the padding amount to maintain the proportional curvature inside
                 the parent. If you increase padding, the child's border-radius decreases accordingly.This ensures
                 smooth, consistent rounding between the two elements.
@@ -64,8 +74,21 @@
 
     <!-- Prism Code Snippet JavaScript Link-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- JavaScript Codes-->
+    <script>
+        const mode = document.querySelector('.mode');
+        const modeIcon = document.querySelector('.mode-icon');
+        const body = document.querySelector('body');
+        const card = document.querySelectorAll('.card');
 
+        mode.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            modeIcon.textContent = body.classList.contains('dark-mode') ? 'light_mode' : 'dark_mode';
 
+        });
+    </script>
+
+    <!-- CSS Codes-->
     <style>
         * {
             transition: all .2s ease-in-out;
@@ -75,16 +98,16 @@
             font-size: 18px;
             /* Default */
             font-family: Arial, sans-serif;
-
         }
 
         body {
-            margin: 0;
-            margin-bottom: 2rem;
+            margin: 2rem 0rem;
             padding: 0 10rem;
             display: flex;
             flex-direction: column;
             gap: 2.5rem;
+            background-color: white;
+            color: black;
         }
 
         h1 {
@@ -115,6 +138,8 @@
         button {
             padding: 1rem;
             cursor: pointer;
+            outline: none;
+            border: none;
 
             /* 1 * root font-size */
             &:active {
@@ -122,24 +147,35 @@
             }
         }
 
-        .formula{
-            width: fit-content;
+        .mode {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            color: rgb(0, 110, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
             padding: 30px;
             border-radius: 40px;
             background-color: #f0f0f0;
+            color: black;
             margin: auto;
         }
 
-        .prism-text{
+        .formula {
+            width: fit-content;
+        }
+
+        .prism-text {
             color: red;
         }
 
         .parent {
             width: 16.5rem;
-            padding: 30px;
-            border-radius: 40px;
-            background-color: #f0f0f0;
-            margin: auto;
         }
 
         .child {
@@ -149,6 +185,24 @@
             border: none;
         }
 
+
+
+        /* Dark Mode Styling  */
+
+        
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+
+        .dark-mode .card {
+            background-color: #0a0a0a;
+            color: white;
+        }
+        .dark-mode .mode{
+            background-color: #111111;
+            color: rgb(255, 238, 0);
+        }
 
 
 
@@ -165,7 +219,7 @@
             }
 
             button {
-                cursor: none;
+                cursor: auto;
             }
         }
 
