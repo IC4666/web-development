@@ -1,0 +1,186 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Prism Code Snippet CSS Link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+</head>
+
+<body>
+    <section>
+        <h1>Proportional Border Radius</h1>
+        <p>You can use this formula when there's padding between the parent and child elements to keep the proportions
+            correct.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Formulas :</h2>
+        <div class="formula">
+            <h3>child-radius = calc(parent-radius - padding)</h3>
+            <h3>parent-radius = calc(child-radius + padding)</h3>
+        </div>
+    
+    </section>
+
+
+    <section>
+        <h2>CSS Code Snippet : Using <span class="prism-text">Prism.js</span></h2>
+        <pre>     <!-- Prism Code Snippet Code Example-->
+            <code class="language-css">
+    .parent {
+    width: 16.5rem;
+    padding: 30px;
+    border-radius: 40px;
+    background-color: #f0f0f0;
+    margin: auto;
+    }
+
+    .child {
+    border-radius: calc((40 - 30) * 1px);
+    background-color: #00f;
+    color: #fff;
+    border: none;
+    }
+            </code>
+        </pre>
+    </section>
+
+
+    <section>
+        <h2>Example :</h2>
+        <div class="parent">
+            <p>The child's border-radius is reduced by the padding amount to maintain the proportional curvature inside
+                the parent. If you increase padding, the child's border-radius decreases accordingly.This ensures
+                smooth, consistent rounding between the two elements.
+            </p>
+            <button class="child">Click me</button>
+        </div>
+    </section>
+
+    <!-- Prism Code Snippet JavaScript Link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+
+    <style>
+        * {
+            transition: all .2s ease-in-out;
+        }
+
+        html {
+            font-size: 18px;
+            /* Default */
+            font-family: Arial, sans-serif;
+
+        }
+
+        body {
+            margin: 0;
+            margin-bottom: 2rem;
+            padding: 0 10rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            /* 2 * root font-size */
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            /* 1.5 * root font-size */
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+            font-style: italic;
+            font-weight: 400;
+            text-align: center;
+            /* 1.25 * root font-size */
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.7rem;
+            /* 1 * root font-size */
+        }
+
+        button {
+            padding: 1rem;
+            cursor: pointer;
+
+            /* 1 * root font-size */
+            &:active {
+                scale: 0.9;
+            }
+        }
+
+        .formula{
+            width: fit-content;
+            padding: 30px;
+            border-radius: 40px;
+            background-color: #f0f0f0;
+            margin: auto;
+        }
+
+        .prism-text{
+            color: red;
+        }
+
+        .parent {
+            width: 16.5rem;
+            padding: 30px;
+            border-radius: 40px;
+            background-color: #f0f0f0;
+            margin: auto;
+        }
+
+        .child {
+            border-radius: calc((40 - 30) * 1px);
+            background-color: #00f;
+            color: #fff;
+            border: none;
+        }
+
+
+
+
+
+
+        /* Media Queries */
+        @media (max-width: 900px) {
+            html {
+                font-size: 15px;
+            }
+
+            body {
+                padding: 4rem;
+            }
+
+            button {
+                cursor: none;
+            }
+        }
+
+
+
+        @media (max-width: 520px) {
+            html {
+                font-size: 12px;
+            }
+
+            body {
+                padding: 2rem;
+            }
+        }
+    </style>
+</body>
+
+</html>
