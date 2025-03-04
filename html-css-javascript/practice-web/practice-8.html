@@ -57,6 +57,8 @@
 
         *{
             transition: all .5s;
+            margin:0;
+            padding: 0;
         }
 
         html {
@@ -69,6 +71,7 @@
             color: #333;
             display: grid;
             place-content: center;
+            gap: 2rem;
 
         }
 
@@ -78,7 +81,6 @@
         }
 
         .container {
-
             height: 5rem;
             width: 30rem;
             padding: 0rem 1rem;
@@ -125,6 +127,7 @@
             padding: 5px;
             border-radius: 50px;
             color: var(--toggle-text-clr);
+            font-size: .7rem;
             font-weight: bold;
             background-color: var(--toggle-bg-clr);
             display: inline-block;
@@ -135,6 +138,21 @@
 
             transform: translateX(var(--toggle-translate));
             transition: all .5s ease-in-out;
+        }
+
+
+        @media(width < 768px){
+            /* html{
+                font-size: 16px;
+            } */
+
+            body{
+                margin:auto;
+            }
+           .container{
+            width: 20rem;
+           }
+
         }
     </style>
 
