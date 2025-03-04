@@ -1,0 +1,143 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Switch</title>
+
+    <!-- Google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <h1>Dark Mode Switch</h1>
+    <div class="container">
+        <p>Dark mode</p>
+        <button class="mode" data-toggle-text="OFF"></button>
+    </div>
+
+
+    <script>
+        const body = document.querySelector('body');
+        const container = document.querySelector('.container');
+        const mode = document.querySelector('.mode');
+
+        mode.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            container.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                mode.style.justifyContent = 'end'
+                mode.setAttribute('data-toggle-text', "ON")
+                document.documentElement.style.setProperty("--toggle-bg-clr", "rgb(0, 196, 0)")
+                document.documentElement.style.setProperty("--toggle-text-clr", "white")
+                document.documentElement.style.setProperty("--toggle-translate", "1.37rem")
+            }
+            else {
+                mode.style.justifyContent = 'start'
+                mode.setAttribute('data-toggle-text', "OFF")
+                document.documentElement.style.setProperty("--toggle-bg-clr", "white")
+                document.documentElement.style.setProperty("--toggle-text-clr", "black")
+                document.documentElement.style.setProperty("--toggle-translate", "-1.37rem")
+            }
+        })
+    </script>
+
+    <style>
+        :root {
+            --bg-color: rgb(230, 230, 230);
+            --toggle-bg-clr: white;
+            --toggle-text-clr: black;
+            --toggle-translate: -1.37rem;
+        }
+
+        *{
+            transition: all .5s;
+        }
+
+        html {
+            font-size: 16px;
+            font-family: "Lexend", sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: #333;
+            display: grid;
+            place-content: center;
+
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: #ffffff;
+        }
+
+        .container {
+
+            height: 5rem;
+            width: 30rem;
+            padding: 0rem 1rem;
+            border-radius: 10px;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow:
+                inset 5px 5px 15px rgba(0, 0, 0, 0.1),
+                10px 10px 10px rgba(0, 0, 0, 0.2),
+                -5px -5px 5px rgba(255, 255, 255);
+
+        }
+
+        .dark-mode .container {
+            background-color: #333;
+            box-shadow:
+                inset 5px 5px 15px rgba(0, 0, 0, 0.2),
+                10px 10px 10px rgba(0, 0, 0, 0.2),
+                -5px -5px 5px rgba(255, 255, 255, 0.1);
+        }
+
+
+        .mode {
+
+            padding: 5px;
+            width: 6rem;
+            background-color: transparent;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 50px;
+            box-shadow:
+                inset 5px 10px 5px rgba(0, 0, 0, 0.2),
+                inset -10px -10px 20px rgba(255, 255, 255);
+
+        }
+
+        .mode::after {
+
+            content: attr(data-toggle-text);
+            width: 2rem;
+            padding: 5px;
+            border-radius: 50px;
+            color: var(--toggle-text-clr);
+            font-weight: bold;
+            background-color: var(--toggle-bg-clr);
+            display: inline-block;
+            box-shadow:
+                inset 5px 10px 5px rgba(0, 0, 0, 0.3),
+                -1px -1px 5px rgba(255, 255, 255),
+                1px 2px 5px rgb(0, 0, 0, 0.5);
+
+            transform: translateX(var(--toggle-translate));
+            transition: all .5s ease-in-out;
+        }
+    </style>
+
+</body>
+
+</html>
