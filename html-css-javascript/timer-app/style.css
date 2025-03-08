@@ -24,7 +24,7 @@ h1 {
 
 .timer-container {
     width: 23rem;
-    height: 25rem;
+    height: 28rem;
     border-radius: 50px;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@ h1 {
     background: #333;
     color: white;
     box-shadow:
-        inset 5px 5px 20px rgba(0, 0, 0, 0.3),
+        inset 0px 0px 50px rgba(0, 0, 0, 0.3),
         5px 5px 5px rgba(0, 0, 0, 0.3),
         -5px -5px 5px rgba(255, 255, 255, 0.05);
     overflow: hidden;
@@ -78,9 +78,27 @@ button:disabled {
 
 .pop-up {
     background: transparent;
-    padding: 0;
     border: none;
     border-radius: 50px;
+}
+
+.pop-up-box{
+
+    width: 18rem;
+    height: 18rem;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow:
+       /* inset 0px 0px 20px rgba(0, 0, 0, 0.3), */
+        /* 5px 5px 15px rgba(0, 0, 0, 0.5), */
+        0px 0px 20px rgba(0, 0, 0, 0.5);
+
 }
 .pop-up-text{
     font-size: 2.5rem;
