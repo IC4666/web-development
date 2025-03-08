@@ -81,6 +81,7 @@ button:disabled {
     padding: 0;
     border: none;
     border-radius: 50px;
+    overflow: hidden;
 }
 .pop-up-text{
     font-size: 3rem;
