@@ -1,0 +1,84 @@
+
+* {
+    font-family: "Audiowide", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    user-select: none;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.hide {
+    display: none;
+    height: 0;
+
+}
+
+.timer-container {
+    width: 23rem;
+    height: 25rem;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background: #333;
+    color: white;
+    box-shadow:
+        inset 5px 5px 15px rgba(0, 0, 0, 0.2),
+        10px 10px 10px rgba(0, 0, 0, 0.2),
+        -5px -5px 5px rgba(255, 255, 255, 0.1);
+    overflow: auto;
+}
+
+input,
+button {
+    height: 3rem;
+    width: 7rem;
+    margin: .5rem;
+    padding: 0rem 1rem;
+    border-radius: 10px;
+    border: none;
+    background: white;
+    font-size: large;
+    font-weight: bold;
+    color: #333;
+    box-shadow:
+        inset 0px 0px 15px rgba(0, 0, 0, 1),
+        10px 10px 10px rgba(0, 0, 0, 0.2),
+        -5px -5px 5px rgba(255, 255, 255, 0.1);
+}
+
+button {
+    width: fit-content;
+    margin: .5rem;
+}
+
+button:disabled {
+    mix-blend-mode: overlay;
+}
+
+.reset {
+    background: red;
+}
+
+.time {
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+.pop-up {
+    background: transparent;
+    padding: 0;
+    border: none;
+    border-radius: 50px;
+}

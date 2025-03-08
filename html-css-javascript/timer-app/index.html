@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- Fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+ 
+</head>
+
+<body>
+    <div class="timer-container">
+        <h1>Timer</h1>
+        <div class="timer-diaplay">
+            <input type="number" id="input-minitue" value="0" min="0">
+            <input type="number" id="input-second" value="0" max="60" min="0">
+
+            <h1 class="time hide"></h1>
+        </div>
+        <div class="timer-buttons">
+            <button class="start">Start</button>
+            <button class="pause hide">Pause</button>
+            <button class="pause hide">Pause</button>
+            <button class="reset hide">Reset</button>
+
+        </div>
+
+        <dialog class="pop-up">
+            <div class="timer-container">
+                <h1 class="pop-up-text" style="color: red;"></h1>
+                <button onclick="closePopup()">Close</button>
+            </div>
+        </dialog>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
