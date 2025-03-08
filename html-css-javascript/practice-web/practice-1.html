@@ -4,6 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draggable Button</title>
+
+    <style>
+        body {
+            background: rgb(255, 255, 255);
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .door {
+            background-color: blueviolet;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            margin-bottom: 50px;
+            position: relative;
+            place-content: center;
+            text-align: center;
+        }
+        .door::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-color: rgb(255, 255, 255);
+            transition: 2s left ease;
+
+        }
+        .door::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-color: rgb(255, 255, 255);
+            transition: 2s right ease;
+        }
+        .door:hover::before {
+            left: -50%;
+
+        }
+        .door:hover::after {
+            right: -50%;
+        }
+        .form-page {
+            /* visibility: hidden; */
+            display: inline-block;
+            background: red;
+            resize: both;
+            overflow: auto;
+            max-width: 500px;
+            max-height: 500px;
+            min-width: 200px;
+            min-height: 200px;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 20px;
+            transform: scale(0);
+            transition: transform .5s ease, height .15s ease, width .15s ease;
+        }
+        .hi {
+            /* visibility: visible; */
+            transform: scale(1);
+        }
+        .bye {
+            transform: scale(0);
+
+        }
+        #draggable {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            cursor: grab;
+            display: inline;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0);
+            color: rgb(40, 40, 40);
+            width: 120px;
+            padding: 20px;
+            border: 0px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.178);
+            backdrop-filter: blur(10px);
+            font-weight: bolder;
+            text-align: center;
+            z-index: 99999;
+        }
+        img {
+            width: 300px;
+            height: 300px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.178);
+            user-select: none;
+            margin: 20px;
+        }
+        .im1 {
+            clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+            transition: 2s clip-path ease;
+            &:hover {
+                clip-path: polygon(0% 60%, 10% 20%, 50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%);
+            }
+        }
+        .im2 {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            transition: 1s border-radius ease;
+            &:hover {
+                border-radius: 74% 26% 41% 59% / 41% 54% 46% 59%
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -46,11 +158,6 @@
         <h1>FUCK YOU!</h1>
 
     </div>
-
-
-
-
-
 
     <script>
         const draggable = document.getElementById("draggable");
@@ -95,144 +202,6 @@
 
     </script>
 
-
-
-    <style>
-
-body {
-            background: rgb(255, 255, 255);
-            margin: 0px;
-            padding: 0px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .door {
-            background-color: blueviolet;
-            width: 300px;
-            height: 300px;
-            margin: 0 auto;
-            margin-bottom: 50px;
-            position: relative;
-            place-content: center;
-            text-align: center;
-        }
-
-        .door::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%;
-            height: 100%;
-            background-color: rgb(255, 255, 255);
-            transition: 2s left ease;
-      
-        }
-
-        .door::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background-color: rgb(255, 255, 255);
-            transition: 2s right ease;
-        }
-
-        .door:hover::before {
-                left: -50%;
-                
-            }
-        .door:hover::after{
-                right: -50%;
-            }
-
-
-
-        .form-page {
-
-            /* visibility: hidden; */
-            display: inline-block;
-            background: red;
-            resize: both;
-            overflow: auto;
-            max-width: 500px;
-            max-height: 500px;
-            min-width: 200px;
-            min-height: 200px;
-            padding: 20px;
-            margin: 20px;
-            border-radius: 20px;
-            transform: scale(0);
-            transition: transform .5s ease, height .15s ease, width .15s ease;
-        }
-
-
-        .hi {
-            /* visibility: visible; */
-            transform: scale(1);
-        }
-
-        .bye {
-            transform: scale(0);
-
-        }
-
-
-        #draggable {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            cursor: grab;
-            display: inline;
-            user-select: none;
-            background-color: rgba(0, 0, 0, 0);
-            color: rgb(40, 40, 40);
-
-            width: 120px;
-            padding: 20px;
-            border: 0px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.178);
-            backdrop-filter: blur(10px);
-            font-weight: bolder;
-            text-align: center;
-            z-index: 99999;
-
-        }
-
-
-        img {
-            width: 300px;
-            height: 300px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.178);
-            user-select: none;
-            margin: 20px;
-        }
-
-        .im1 {
-            clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-            transition: 2s clip-path ease;
-
-
-            &:hover {
-                clip-path: polygon(0% 60%, 10% 20%, 50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%);
-            }
-        }
-
-
-        .im2 {
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            transition: 1s border-radius ease;
-
-
-            &:hover {
-                border-radius: 74% 26% 41% 59% / 41% 54% 46% 59%
-            }
-        }
-    </style>
 </body>
 
 </html>

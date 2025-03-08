@@ -10,84 +10,6 @@
     <!-- Google font icons CSS Link-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" />
 
-</head>
-
-<body>
-    <nav>
-        <button class="mode">
-            <span class="material-symbols-outlined mode-icon">dark_mode</span>
-        </button>
-    </nav>
-
-
-    <section>
-        <h1>Proportional Border Radius</h1>
-        <p>You can use this formula when there's padding between the parent and child elements to keep the proportions
-            correct.
-        </p>
-    </section>
-
-
-    <section>
-        <h2>Formulas :</h2>
-        <div class="card formula">
-            <h3>child-radius = calc(parent-radius - padding)</h3>
-            <h3>parent-radius = calc(child-radius + padding)</h3>
-        </div>
-
-    </section>
-
-
-    <section>
-        <h2>CSS Code Snippet : Using <span class="prism-text">Prism.js</span></h2>
-        <pre>     <!-- Prism Code Snippet Code Example-->
-            <code class="language-css">
-    .parent {
-    width: 16.5rem;
-    padding: 30px;
-    border-radius: 40px;
-    background-color: #f0f0f0;
-    margin: auto;
-    }
-
-    .child {
-    border-radius: calc((40 - 30) * 1px);
-    background-color: #00f;
-    color: #fff;
-    border: none;
-    }
-            </code>
-        </pre>
-    </section>
-
-
-    <section>
-        <h2>Example :</h2>
-        <div class="card parent ">
-            <p>The child's border-radius is reduced by the padding amount to maintain the proportional curvature inside
-                the parent. If you increase padding, the child's border-radius decreases accordingly.This ensures
-                smooth, consistent rounding between the two elements.
-            </p>
-            <button class="child">Click me</button>
-        </div>
-    </section>
-
-    <!-- Prism Code Snippet JavaScript Link-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <!-- JavaScript Codes-->
-    <script>
-        const mode = document.querySelector('.mode');
-        const modeIcon = document.querySelector('.mode-icon');
-        const body = document.querySelector('body');
-        const card = document.querySelectorAll('.card');
-
-        mode.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            modeIcon.textContent = body.classList.contains('dark-mode') ? 'light_mode' : 'dark_mode';
-
-        });
-    </script>
-
     <!-- CSS Codes-->
     <style>
         * {
@@ -186,10 +108,7 @@
         }
 
 
-
         /* Dark Mode Styling  */
-
-        
         .dark-mode {
             background-color: black;
             color: white;
@@ -199,13 +118,11 @@
             background-color: #111;
             color: white;
         }
-        .dark-mode .mode{
+
+        .dark-mode .mode {
             background-color: #222;
             color: rgb(255, 238, 0);
         }
-
-
-
 
 
         /* Media Queries */
@@ -223,8 +140,6 @@
             }
         }
 
-
-
         @media (max-width: 520px) {
             html {
                 font-size: 12px;
@@ -239,6 +154,85 @@
             }
         }
     </style>
+
+</head>
+
+<body>
+    <nav>
+        <button class="mode">
+            <span class="material-symbols-outlined mode-icon">dark_mode</span>
+        </button>
+    </nav>
+
+
+    <section>
+        <h1>Proportional Border Radius</h1>
+        <p>You can use this formula when there's padding between the parent and child elements to keep the proportions
+            correct.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Formulas :</h2>
+        <div class="card formula">
+            <h3>child-radius = calc(parent-radius - padding)</h3>
+            <h3>parent-radius = calc(child-radius + padding)</h3>
+        </div>
+
+    </section>
+
+
+    <section>
+        <h2>CSS Code Snippet : Using <span class="prism-text">Prism.js</span></h2>
+        <pre>     <!-- Prism Code Snippet Code Example-->
+            <code class="language-css">
+    .parent {
+    width: 16.5rem;
+    padding: 30px;
+    border-radius: 40px;
+    background-color: #f0f0f0;
+    margin: auto;
+    }
+
+    .child {
+    border-radius: calc((40 - 30) * 1px);
+    background-color: #00f;
+    color: #fff;
+    border: none;
+    }
+            </code>
+        </pre>
+    </section>
+
+
+    <section>
+        <h2>Example :</h2>
+        <div class="card parent ">
+            <p>The child's border-radius is reduced by the padding amount to maintain the proportional curvature inside
+                the parent. If you increase padding, the child's border-radius decreases accordingly.This ensures
+                smooth, consistent rounding between the two elements.
+            </p>
+            <button class="child">Click me</button>
+        </div>
+    </section>
+
+    <!-- Prism Code Snippet JavaScript Link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- JavaScript Codes-->
+    <script>
+        const mode = document.querySelector('.mode');
+        const modeIcon = document.querySelector('.mode-icon');
+        const body = document.querySelector('body');
+        const card = document.querySelectorAll('.card');
+
+        mode.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            modeIcon.textContent = body.classList.contains('dark-mode') ? 'light_mode' : 'dark_mode';
+
+        });
+    </script>
+
 </body>
 
 </html>
