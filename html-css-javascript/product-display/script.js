@@ -12,11 +12,15 @@ products.forEach((product) => {
             <p>Brand: ${product.brand}</p>
             <p>Discount: ${product.discount}%</p>
             <p>Stock: ${product.stock}</p>
+<<<<<<< HEAD
             <button class="product-button">Buy Now</button>
+=======
+>>>>>>> cda9f34ed58cb258238c2d2aeb136d0d2c1e1c6b
         </div>
    </div>`;
 });
 
+<<<<<<< HEAD
 document.querySelector(".product-container").innerHTML = productHtml;
 
 
@@ -37,3 +41,6 @@ document.querySelectorAll(".product-button").forEach((btn, index) => {
 });
 
 
+=======
+document.querySelector(".product-container").innerHTML = productHtml;
+>>>>>>> cda9f34ed58cb258238c2d2aeb136d0d2c1e1c6b

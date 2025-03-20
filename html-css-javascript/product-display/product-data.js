@@ -160,6 +160,7 @@ const products = [
         brand: 'iQOO',
         discount: 8.5,
         stock: 15
+<<<<<<< HEAD
     },
     {
         image: "iqoo.png",
@@ -169,4 +170,6 @@ const products = [
         brand: 'iQOO',
         discount: 8.5,
         stock: 15
+=======
+>>>>>>> cda9f34ed58cb258238c2d2aeb136d0d2c1e1c6b
     }];

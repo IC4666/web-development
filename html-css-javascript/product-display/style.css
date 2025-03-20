@@ -1,11 +1,17 @@
+<<<<<<< HEAD
 *{
     transition: all 0.15s ease-in-out;
 }
+=======
+>>>>>>> cda9f34ed58cb258238c2d2aeb136d0d2c1e1c6b
 .product-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+<<<<<<< HEAD
    
+=======
+>>>>>>> cda9f34ed58cb258238c2d2aeb136d0d2c1e1c6b
 }
 .product {
     width: 300px;
@@ -14,7 +20,10 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
     position: relative;
+=======
+>>>>>>> cda9f34ed58cb258238c2d2aeb136d0d2c1e1c6b
 }
 .product img {
     width: 150px;
@@ -29,6 +38,7 @@
     margin: 10px 0;
 }
 .product button {
+<<<<<<< HEAD
     padding: 10px 10px;
     border: none;
     border-radius: 5px;
@@ -59,4 +69,12 @@
     font-size: 13px;
     color: rgb(0, 0, 0);
     text-align: center;
+=======
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ff0000;
+    cursor: pointer;
+>>>>>>> cda9f34ed58cb258238c2d2aeb136d0d2c1e1c6b
 }
