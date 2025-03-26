@@ -37,6 +37,19 @@
             text-transform: capitalize;
             font-family: 'Courier New', Courier, monospace;
             margin-top: 30vw;
+            animation: blur-text-appearance 2s ease-in-out;
+        }
+
+        @keyframes blur-text-appearance {
+            0% {
+                filter: blur(10px);
+                opacity: 0;
+            }
+
+            100% {
+                filter: blur(0px);
+                opacity: 1;
+            }
         }
 
         .border-container {
@@ -54,7 +67,7 @@
             background-size: 100%;
             background-clip: text;
             color: transparent;
-
+            animation: blur-text-appearance 4s ease-in-out;
         }
 
         @keyframes rolling-animation {
@@ -77,7 +90,7 @@
     <h1 classi="header"> Welcome to the Galaxy</h1>
     <div class="border-container">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit
+            In a distant galaxy, twin stars danced around a black hole, guarding a planet of eternal twilight. There, crystal trees whispered secrets of time to glowing creatures. One curious child touched a starlight bloom—and vanished, reappearing across the universe, carrying dreams of peace between worlds. The galaxy remembered her.        
         </p>
     </div>
 
