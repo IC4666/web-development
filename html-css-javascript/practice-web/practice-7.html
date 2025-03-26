@@ -7,22 +7,34 @@
     <style>
         body {
             margin: 0;
-            padding: 0;
+            padding: 0px 10px;
             background-color: rgb(0, 0, 0);
             display: flex;
             justify-content: center;    
             position: relative;
         }
+        .container {
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            overflow: hidden;
+            top: -75vw;
+            z-index: -1;
+        }   
         img {
-            width: 70vw;
-            border: 10px solid rgb(0, 0, 0);
+            width: 100%;
             border-radius: 50%;
             user-select: none;
             outline: none;
-            position: absolute;
-            top: -52vw;
-
             animation: rolling-animation 120s infinite linear;
+        }
+        h1 {
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            text-transform: capitalize;
+            margin-top: 50vw;
+            
         }
 
         @keyframes rolling-animation {
@@ -37,6 +49,9 @@
     </style>
 </head>
 <body>
-    <img src="images/glitter-circle.jpeg" alt="">
+    <div class="container">  
+        <img src="images/glitter-circle.jpeg" alt="">
+    </div>
+    <h1> Welcome to the Galaxy</h1>
 </body>
 </html>
