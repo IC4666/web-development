@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,22 @@
     <style>
         body {
             margin: 0;
-            padding: 0px 10px;
+            padding: 0px 20px;
             background-color: rgb(0, 0, 0);
-            display: flex;
-            justify-content: center;    
-            position: relative;
+            padding-bottom: 20px;
+
         }
+
         .container {
-            width: 100vw;
+            width: 90vw;
             display: flex;
             justify-content: center;
             position: absolute;
             overflow: hidden;
             top: -75vw;
             z-index: -1;
-        }   
+        }
+
         img {
             width: 100%;
             border-radius: 50%;
@@ -29,29 +31,59 @@
             outline: none;
             animation: rolling-animation 120s infinite linear;
         }
+
         h1 {
             color: white;
-            font-family: 'Courier New', Courier, monospace;
             text-transform: capitalize;
-            margin-top: 50vw;
-            
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 30vw;
+        }
+
+        .border-container {
+            border: 5px solid transparent;
+            border-image: linear-gradient(90deg, rgb(53, 53, 53)20%, rgb(255, 255, 255) 80%);
+            border-image-slice: 1;
+            border-radius: 30px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+
+        p {
+            background: linear-gradient(90deg, rgb(255, 255, 255)20%, rgb(53, 53, 53) 80%);
+            background-size: 100%;
+            background-clip: text;
+            color: transparent;
+
         }
 
         @keyframes rolling-animation {
             0% {
                 transform: rotate(0deg);
             }
+
             100% {
                 transform: rotate(360deg);
             }
-            
+
         }
     </style>
 </head>
+
 <body>
-    <div class="container">  
+    <div class="container">
         <img src="images/glitter-circle.jpeg" alt="">
     </div>
-    <h1> Welcome to the Galaxy</h1>
+    <h1 classi="header"> Welcome to the Galaxy</h1>
+    <div class="border-container">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit
+        </p>
+    </div>
+
+
+
+
 </body>
+
 </html>
