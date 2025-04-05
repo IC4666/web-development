@@ -1,0 +1,171 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom properties</title>
+
+    <style>
+        
+    @import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Lexend:wght@100..900&display=swap');
+        :root{
+            --green: #81ff81;
+            --red: #ff86aa;
+            --purple: #bd77ff;
+
+            --green-shadow: -20px -20px 0px  #a9fda9;
+            --red-shadow: -20px -20px 0px #ffb3ca;
+            --purple-shadow: -20px -20px 0px #dab3ff;
+        }
+
+        html {
+            font-size: 16px;
+            font-family: "Lexend", sans-serif;
+            transition: all .5s ease-in-out;
+        }
+
+        body {
+            background: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .border-container {
+            width: 60vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            text-align: center;
+            margin-top: 2rem;
+
+            h1{
+                font-family: "Goldman", sans-serif;
+                font-size: 2rem;
+            } 
+            p {
+                font-size: 1rem;
+                color: rgb(100, 100, 100);
+            }
+        }
+
+        .container {
+            width: 100vw;
+            padding: 100px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin: 100px 0px;
+            border-top:rgb(223, 223, 223) 1px solid;
+        }
+
+
+        .card {
+            --_shadow: var(--shadow, -20px -20px 0px rgb(0, 0, 0));
+            --_bg: var(--bg, #000000);
+             
+            list-style: none;
+            width: 250px;
+            height: 350px;
+            padding: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), var(--_shadow);
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: var(--_bg);
+
+        }
+
+        .card svg{
+            width: 60px;
+            height: 60px;
+            display: block;
+            fill: var(--_bg)
+        }
+
+        .card button {
+            width: 100%;
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 0 auto;
+            display: block;
+            color:rgb(255, 255, 255);
+            background-color: var(--_bg);
+            transition: all .15s ease-in-out;
+
+            &:hover{
+                scale: 1.05;
+            }
+            &:active {
+                scale: 1;
+            }
+        }
+
+        .bike-card:hover {
+            --bg: var(--green);
+            --shadow: var(--green-shadow);
+        }
+        .car-card:hover{
+            --bg: var(--red);
+            --shadow: var(--red-shadow);
+        }
+
+        .rocket-card:hover{
+            --bg: var(--purple);
+            --shadow: var(--purple-shadow);
+        }
+
+        @media (max-width: 768px) {
+            html{
+                font-size: 13px;
+            }
+            .border-container {
+                width: 90vw;
+            }
+        
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="border-container">
+        <h1>Custom properties in CSS, are a powerful way to store reusable values for your styles</h1>
+        <p>They allow you to define a value once and use it throughout your CSS, making it easier to maintain and update your styles.</p>
+    </div>
+    <ul class="container">
+        <li class="card bike-card">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M428-520h-70 150-80ZM200-200q-83 0-141.5-58.5T0-400q0-83 58.5-141.5T200-600h464l-80-80H440v-80h143q16 0 30.5 6t25.5 17l139 139q78 6 130 63t52 135q0 83-58.5 141.5T760-200q-83 0-141.5-58.5T560-400q0-18 2.5-35.5T572-470L462-360h-66q-14 70-69 115t-127 45Zm560-80q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm-560 0q38 0 68.5-22t43.5-58H200v-80h112q-13-36-43.5-58T200-520q-50 0-85 35t-35 85q0 50 35 85t85 35Zm198-160h30l80-80H358q15 17 25 37t15 43Z"/></svg>
+            <h1>Bike</h1>
+            <p>A bike is a two-wheeled vehicle that is powered by pedaling.</p>
+            <h3>Top Speed: 100 km/h</h3>
+            <button>Interested</button>
+        </li>
+
+        <li class="card car-card">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200v40q0 17-11.5 28.5T200-120h-40q-17 0-28.5-11.5T120-160v-320l84-240q6-18 21.5-29t34.5-11h440q19 0 34.5 11t21.5 29l84 240v320q0 17-11.5 28.5T800-120h-40q-17 0-28.5-11.5T720-160v-40H240Zm-8-360h496l-42-120H274l-42 120Zm-32 80v200-200Zm100 160q25 0 42.5-17.5T360-380q0-25-17.5-42.5T300-440q-25 0-42.5 17.5T240-380q0 25 17.5 42.5T300-320Zm360 0q25 0 42.5-17.5T720-380q0-25-17.5-42.5T660-440q-25 0-42.5 17.5T600-380q0 25 17.5 42.5T660-320Zm-460 40h560v-200H200v200Z"/></svg>
+            <h1>Car</h1>
+            <p>A car is a four-wheeled vehicle powered by an engine, offering comfortable transportation.</p>
+            <h3>Top Speed: 200 km/h</h3>
+            <button>Interested</button>
+        </li>
+
+        <li class="card rocket-card">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m226-559 78 33q14-28 29-54t33-52l-56-11-84 84Zm142 83 114 113q42-16 90-49t90-75q70-70 109.5-155.5T806-800q-72-5-158 34.5T492-656q-42 42-75 90t-49 90Zm178-65q-23-23-23-56.5t23-56.5q23-23 57-23t57 23q23 23 23 56.5T660-541q-23 23-57 23t-57-23Zm19 321 84-84-11-56q-26 18-52 32.5T532-299l33 79Zm313-653q19 121-23.5 235.5T708-419l20 99q4 20-2 39t-20 33L538-80l-84-197-171-171-197-84 167-168q14-14 33.5-20t39.5-2l99 20q104-104 218-147t235-24ZM157-321q35-35 85.5-35.5T328-322q35 35 34.5 85.5T327-151q-25 25-83.5 43T82-76q14-103 32-161.5t43-83.5Zm57 56q-10 10-20 36.5T180-175q27-4 53.5-13.5T270-208q12-12 13-29t-11-29q-12-12-29-11.5T214-265Z"/></svg>
+            <h1>Rocket</h1>
+            <p>A rocket is a space vehicle designed for high-speed travel beyond Earth's atmosphere.</p>
+            <h3>Top Speed: 27,000 km/h</h3>
+            <button>Interested</button>
+        </li>
+    </ul>
+</body>
+</html>
