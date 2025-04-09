@@ -11,7 +11,8 @@
             padding: 0px 20px;
             background-color: rgb(0, 0, 0);
             padding-bottom: 20px;
-
+            overflow-x: hidden;
+            transition: all 0.5s ease-in-out;
         }
 
         .container {
@@ -37,7 +38,7 @@
             text-transform: capitalize;
             font-family: 'Courier New', Courier, monospace;
             margin-top: 30vw;
-            animation: blur-text-header 2s ease-in-out;
+            animation: header-animation 1s linear(0, 0.085 3.5%, 0.169 7.2%, 0.538 24.3%, 0.888 39.3%, 0.951 42.2%, 1 44.7%, 0.938 48.5%, 0.916 50.2%, 0.898 51.8%, 0.884 53.5%, 0.874 55.1%, 0.868 56.7%, 0.866 58.4%, 0.868 59.8%, 0.872 61.2%, 0.878 62.7%, 0.888 64.3%, 0.912 67.2%, 0.974 73.9%, 1 77.4%, 0.99 79.4%, 0.984 81%, 0.981 82.7%, 0.98 84.5%, 0.982 87.6%, 0.997 95.2%, 1);
         }
 
 
@@ -57,6 +58,7 @@
             background-size: 100%;
             background-clip: text;
             color: transparent;
+            animation: blur-text-animation 2s ease-in-out;
 
         }
 
@@ -65,7 +67,7 @@
             margin-right: 5px;
             opacity: 0;
             filter: blur(10px);
-            transform: translateY(20px);
+            transform: translateX(50px);
             display: inline-block;
             transition: all .5s ease-in-out;
         }
@@ -73,7 +75,7 @@
         .paragraph-text span.span-text-animation {
             opacity: 1;
             filter: blur(0px);
-            transform: translateY(0px);
+            transform: translateX(0px);
         }
 
 
@@ -88,12 +90,23 @@
             }
         }
 
-        @keyframes blur-text-header {
+        @keyframes header-animation {
+            0% {
+                font-size: 3rem;
+                letter-spacing: 10px;
+            }
+
+            100% {
+                font-size: normal;
+                letter-spacing: normal;
+            }
+        }
+
+        @keyframes blur-text-animation {
             0% {
                 filter: blur(10px);
                 opacity: 0;
             }
-
             100% {
                 filter: blur(0px);
                 opacity: 1;
