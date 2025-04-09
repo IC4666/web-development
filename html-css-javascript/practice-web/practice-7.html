@@ -37,10 +37,58 @@
             text-transform: capitalize;
             font-family: 'Courier New', Courier, monospace;
             margin-top: 30vw;
-            animation: blur-text-appearance 2s ease-in-out;
+            animation: blur-text-header 2s ease-in-out;
         }
 
-        @keyframes blur-text-appearance {
+
+
+        .gradient-border-container {
+            border: 5px solid transparent;
+            border-image: linear-gradient(90deg, rgb(53, 53, 53)20%, rgb(255, 255, 255) 80%);
+            border-image-slice: 1;
+            border-radius: 30px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+
+        .gradient-paragraph-text {
+            background: linear-gradient(90deg, rgb(255, 255, 255)20%, rgb(53, 53, 53) 80%);
+            background-size: 100%;
+            background-clip: text;
+            color: transparent;
+
+        }
+
+        .paragraph-text span {
+            color: white;
+            margin-right: 5px;
+            opacity: 0;
+            filter: blur(10px);
+            transform: translateY(20px);
+            display: inline-block;
+            transition: all .5s ease-in-out;
+        }
+
+        .paragraph-text span.span-text-animation {
+            opacity: 1;
+            filter: blur(0px);
+            transform: translateY(0px);
+        }
+
+
+
+        @keyframes rolling-animation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes blur-text-header {
             0% {
                 filter: blur(10px);
                 opacity: 0;
@@ -51,35 +99,6 @@
                 opacity: 1;
             }
         }
-
-        .border-container {
-            border: 5px solid transparent;
-            border-image: linear-gradient(90deg, rgb(53, 53, 53)20%, rgb(255, 255, 255) 80%);
-            border-image-slice: 1;
-            border-radius: 30px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-
-        p {
-            background: linear-gradient(90deg, rgb(255, 255, 255)20%, rgb(53, 53, 53) 80%);
-            background-size: 100%;
-            background-clip: text;
-            color: transparent;
-            animation: blur-text-appearance 4s eased-in-out;
-        }
-
-        @keyframes rolling-animation {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-
-        }
     </style>
 </head>
 
@@ -89,13 +108,45 @@
     </div>
     <h1 classi="header"> Welcome to the Galaxy</h1>
     <div class="border-container">
-        <p>
-            In a distant galaxy, twin stars danced around a black hole, guarding a planet of eternal twilight. There, crystal trees whispered secrets of time to glowing creatures. One curious child touched a starlight bloom—and vanished, reappearing across the universe, carrying dreams of peace between worlds. The galaxy remembered her.        
+        <p class="paragraph-text">
+            In a distant galaxy, twin stars danced around a black hole, guarding a planet of eternal twilight. There,
+            crystal trees whispered secrets of time to glowing creatures. One curious child touched a starlight
+            bloom—and vanished, reappearing across the universe, carrying dreams of peace between worlds. The galaxy
+            remembered her.
+        </p>
+    </div>
+
+    <div class="gradient-border-container">
+        <p class="gradient-paragraph-text">
+            In a distant galaxy, twin stars danced around a black hole, guarding a planet of eternal twilight. There,
+            crystal trees whispered secrets of time to glowing creatures. One curious child touched a starlight
+            bloom—and vanished, reappearing across the universe, carrying dreams of peace between worlds. The galaxy
+            remembered her.
         </p>
     </div>
 
 
+    <script>
+        window.addEventListener('load', () => {
+            const paragraph = document.querySelector('.paragraph-text');
+            const words = paragraph.innerText.split(' ');
 
+            paragraph.innerText = ''; // Clear the paragraph text
+
+            words.forEach((word, index) => {
+                const span = document.createElement('span');
+                span.innerText = word;
+                paragraph.appendChild(span);
+                setTimeout(() => {
+                    // span.style.filter = 'blur(0px)';
+                    // span.style.opacity = '1';
+                    // span.style.transform = 'translateY(0px)';
+                    span.classList.add('span-text-animation');
+                }, index * 50); // Delay for each word
+
+            });
+        });
+    </script>
 
 </body>
 

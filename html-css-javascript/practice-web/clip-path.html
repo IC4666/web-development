@@ -1,0 +1,134 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clip-path Card Design</title>
+
+    <style>
+        body {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .card-one {
+            width: 200px;
+            height: 200px;
+            background-color: #ffffff;
+            position: relative;
+            display: block;
+            margin: 3rem auto;
+
+
+        }
+
+        .card-one-head {
+            background-color: #0b071a;
+            width: 90px;
+            height: 40px;
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            color: #ff0000;
+            font-size: .8rem;
+            font-weight: 600;
+
+        }
+
+        .card-one-body {
+            /* inner-arc A 10, 10, 0, 0, 0
+            outer-arc A 10, 10, 0, 0, 1 */
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: #000000;
+            background: url("images/red-girl1.png") no-repeat center center;
+            background-size: cover;
+
+
+            clip-path: path("M 10,50 L 90,50 A 10, 10, 0, 0, 0 100,40 L 100, 10 A 10, 10, 0, 0, 1 110, 0 L 190, 0 A 10, 10, 0, 0, 1 200, 10 L 200, 190 A 10, 10, 0, 0, 1 190, 200 L 10, 200 A 10, 10, 0, 0, 1 0, 190 L 0, 60 A 10, 10, 0, 0, 1 10,50 Z");
+            /*x, y */
+        }
+
+
+
+        .card-two {
+            width: 400px;
+            height: 400px;
+
+            position: relative;
+            display: block;
+            margin: 3rem auto;
+
+        }
+
+        .card-two-body {
+            /* clip-path: path("M x% y% ... Z");
+             inner-arc A 10, 10, 0, 0, 0
+            outer-arc A 10, 10, 0, 0, 1 */
+
+            width: 100%;
+            height: 100%;
+            clip-path: path("M 20,100 L 180, 100 A 20, 20, 0, 0, 0 200,80 L 200, 20 A 20, 20, 0, 0, 1 220, 0 L 380, 0 A 20, 20, 0, 0, 1 400, 20 L 400, 380 A 20, 20, 0, 0, 1 380, 400 L 20, 400 A 20, 20, 0, 0, 1 0, 380 L 0, 120 A 20, 20, 0, 0, 1 20,100 Z");
+            background-color: rgb(20, 172, 40);
+            /* For visual representation */
+        }
+
+        .card-two-head {
+            width: 200px;
+            height: 100px;
+            background-color: #1900ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            > * {
+                height: 60px;
+                width: 60px;
+                color: #ffffff;
+                font-size: 14px;
+                font-weight: 600;
+                
+                text-align: center;
+                margin: 5px;
+                background-color: #000000;
+                border-radius: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-one">
+        <div class="card-one-head">I'm RED</div>
+        <div class="card-one-body">
+            <!-- <img src="images/red-girl1.png" alt=""> -->
+        </div>
+    </div>
+
+    <div class="card-two">
+        <div class="card-two-head">
+            <div>Hi</div>
+            <div>I'm</div>
+            <div>IC</div>
+        </div>
+        <div class="card-two-body">
+            <!-- <img src="images/red-girl1.png" alt=""> -->
+        </div>
+    </div>
+
+
+</body>
+
+</html>
