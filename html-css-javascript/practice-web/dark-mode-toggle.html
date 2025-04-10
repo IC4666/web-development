@@ -23,7 +23,6 @@
             margin: 0;
             padding: 0;
         }
-
         html {
             font-size: 16px;
             font-family: "Lexend", sans-serif;
@@ -34,10 +33,6 @@
             display: grid;
             place-content: center;
             gap: 2rem;
-        }
-        .dark-mode {
-            background-color: #333;
-            color: #ffffff;
         }
         .container {
             height: 5rem;
@@ -54,14 +49,6 @@
                 -5px -5px 5px rgba(255, 255, 255);
 
         }
-        .dark-mode .container {
-            background-color: #333;
-            box-shadow:
-                inset 5px 5px 15px rgba(0, 0, 0, 0.2),
-                10px 10px 10px rgba(0, 0, 0, 0.2),
-                -5px -5px 5px rgba(255, 255, 255, 0.1);
-        }
-
         .mode-button {
             padding: 5px;
             width: 6rem;
@@ -73,15 +60,6 @@
                 inset 5px 10px 5px rgba(0, 0, 0, 0.2),
                 inset -1px -5px 5px rgba(255, 255, 255);
         }
-        .dark-mode .mode-button{
-            background-color: rgb(49, 49, 49);
-            box-shadow:
-                inset 5px 10px 5px rgba(0, 0, 0, 0.2),
-                inset 1px 1px 2px rgba(0, 0, 0, 0.3),
-                inset -1px -1px 2px rgba(255, 255, 255, 0.5);
-
-        } 
-
         .mode-button::after {
             content: attr(data-toggle-text);
             width: 2rem;
@@ -99,11 +77,30 @@
             transform: translateX(var(--toggle-translate));
             transition: all .5s ease-in-out;
         }
+
+        .dark-mode {
+            background-color: #333;
+            color: #ffffff;
+        }
+        .dark-mode .container {
+            background-color: #333;
+            box-shadow:
+                inset 5px 5px 15px rgba(0, 0, 0, 0.2),
+                10px 10px 10px rgba(0, 0, 0, 0.2),
+                -5px -5px 5px rgba(255, 255, 255, 0.1);
+        }
+        .dark-mode .mode-button{
+            background-color: rgb(49, 49, 49);
+            box-shadow:
+                inset 5px 10px 5px rgba(0, 0, 0, 0.2),
+                inset 1px 1px 2px rgba(0, 0, 0, 0.3),
+                inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+        } 
         .dark-mode .mode-button::after{
             box-shadow:
                 inset 5px 10px 5px rgba(0, 0, 0, 0.3),
                 -1px -1px 5px rgb(0, 0, 0, 0.3),
-                1px 2px 5px rgb(0, 0, 0, 0.5);
+                1px 1px 5px rgb(0, 0, 0, 0.5);
 
         } 
 
