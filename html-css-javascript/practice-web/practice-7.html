@@ -8,10 +8,8 @@
     <style>
         body {
             margin: 0;
-            padding: 0px 20px;
+            padding: 20px;
             background-color: rgb(0, 0, 0);
-            padding-bottom: 20px;
-            overflow-x: hidden;
             transition: all 0.5s ease-in-out;
         }
 
@@ -41,21 +39,10 @@
             animation: header-animation 1s linear(0, 0.085 3.5%, 0.169 7.2%, 0.538 24.3%, 0.888 39.3%, 0.951 42.2%, 1 44.7%, 0.938 48.5%, 0.916 50.2%, 0.898 51.8%, 0.884 53.5%, 0.874 55.1%, 0.868 56.7%, 0.866 58.4%, 0.868 59.8%, 0.872 61.2%, 0.878 62.7%, 0.888 64.3%, 0.912 67.2%, 0.974 73.9%, 1 77.4%, 0.99 79.4%, 0.984 81%, 0.981 82.7%, 0.98 84.5%, 0.982 87.6%, 0.997 95.2%, 1);
         }
 
-        .gradient-border-container {
-            border: 5px solid transparent;
-            border-image: linear-gradient(90deg, rgb(53, 53, 53)20%, rgb(255, 255, 255) 80%);
-            border-image-slice: 1;
-            border-radius: 30px;
-            padding: 20px;
+        .border-container {
+            padding: 0px;
             margin-top: 20px;
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, rgb(255, 255, 255)20%, rgb(53, 53, 53) 80%);
-            background-size: 100%;
-            background-clip: text;
-            color: transparent;
-            animation: blur-text-animation 2s ease-in-out;
+            overflow-x: hidden;
         }
 
         .text-blur-effect span {
@@ -86,7 +73,23 @@
             scale: 1;
         }
 
+        .gradient-border-container {
+            border: 5px solid transparent;
+            border-image: linear-gradient(90deg, rgb(53, 53, 53)20%, rgb(255, 255, 255) 80%);
+            border-image-slice: 1;
+            border-radius: 30px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, rgb(255, 255, 255)20%, rgb(53, 53, 53) 80%);
+            background-size: 100%;
+            background-clip: text;
+            color: transparent;
+            animation: blur-text-animation 2s ease-in-out;
+        }
 
+/* CSS animations */
 
         @keyframes rolling-animation {
             0% {
