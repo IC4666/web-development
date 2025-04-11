@@ -15,6 +15,7 @@
         :root{
             --radius : 40px;
             --padding : 30px;
+            --card-bg-color: rgba(126, 126, 126, 0.135);
         }
 
         *{
@@ -79,7 +80,7 @@
             width: 3rem;
             height: 3rem;
             border-radius: 50%;
-            background-color: #f0f0f0;
+            background-color: var(--card-bg-color);
             color: rgb(0, 110, 255);
             display: flex;
             justify-content: center;
@@ -90,7 +91,7 @@
     
             padding: var(--padding);
             border-radius: var(--radius);
-            background-color: #f0f0f0;
+            background-color: var(--card-bg-color);
             color: black;
             margin: auto;
         }
@@ -122,17 +123,16 @@
         }
 
         .dark-mode .card {
-            background-color: #111;
+           
             color: white;
         }
 
         .dark-mode .mode {
-            background-color: #222;
             color: rgb(255, 238, 0);
         }
         
         pre[class*=language-]{
-            background: rgba(126, 126, 126, 0.1);
+            background: var(--card-bg-color);
             border-radius: var(--radius);
         }
         code[class*=language-] {
@@ -226,7 +226,7 @@
 
     <section>
         <h2>Example :</h2>
-        <div class="card parent ">
+        <div class="card parent">
             <p>The child's border-radius is reduced by the padding amount to maintain the proportional curvature inside
                 the parent. If you increase padding, the child's border-radius decreases accordingly.This ensures
                 smooth, consistent rounding between the two elements.
