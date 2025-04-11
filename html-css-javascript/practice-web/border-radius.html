@@ -12,7 +12,12 @@
 
     <!-- CSS Codes-->
     <style>
-        * {
+        :root{
+            --radius : 40px;
+            --padding : 30px;
+        }
+
+        *{
             transition: all .2s ease-in-out;
         }
 
@@ -62,6 +67,7 @@
             cursor: pointer;
             outline: none;
             border: none;
+       
 
             /* 1 * root font-size */
             &:active {
@@ -81,8 +87,9 @@
         }
 
         .card {
-            padding: 30px;
-            border-radius: 40px;
+    
+            padding: var(--padding);
+            border-radius: var(--radius);
             background-color: #f0f0f0;
             color: black;
             margin: auto;
@@ -101,7 +108,7 @@
         }
 
         .child {
-            border-radius: calc((40 - 30) * 1px);
+            border-radius: calc(var(--radius) - var(--padding));
             background-color: #00f;
             color: #fff;
             border: none;
@@ -123,6 +130,17 @@
             background-color: #222;
             color: rgb(255, 238, 0);
         }
+        
+        pre[class*=language-]{
+            background: rgba(126, 126, 126, 0.1);
+            border-radius: var(--radius);
+        }
+        code[class*=language-] {
+           
+            text-shadow: none;
+            color: #284188;
+        }
+        
 
 
         /* Media Queries */
