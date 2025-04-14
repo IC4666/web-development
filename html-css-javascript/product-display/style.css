@@ -176,10 +176,16 @@ footer .social-media{
 
 
 @media (max-width: 768px) {
+    header {
+        width: 90%;
+    }
     footer{
         flex-direction: column;
         align-items: center;
         gap: 20px;
+    }
+    footer h2 {
+        width: 100%;
     }
     footer .footer-links{
         justify-content: center;
