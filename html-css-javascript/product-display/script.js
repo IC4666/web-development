@@ -13,7 +13,7 @@ products.forEach((product) => {
             <p>Discount: ${product.discount}%</p>
             <p>Stock: ${product.stock}</p>
 
-            <button class="product-button">Buy Now</button>
+            <button class="product-button">Add to cart</button>
 
         </div>
    </div>`;
