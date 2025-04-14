@@ -181,6 +181,7 @@ footer .social-media{
     }
     footer{
         flex-direction: column;
+        justify-content: centre;
         align-items: center;
         gap: 20px;
     }
