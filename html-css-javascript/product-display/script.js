@@ -1,7 +1,7 @@
 let productHtml = "";
 products.forEach((product) => {
     productHtml += `
-    <div class="product">
+    <div class="product-card">
         <div class="product-image">
             <img src="images/${product.image}" alt="${product.name}" title="${product.name}">
         </div>
