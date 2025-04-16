@@ -1,3 +1,6 @@
+// import { products } from "./product-data.js";
+// import { cart } from "./cart.js";
+
 let productHtml = "";
 products.forEach((product) => {
     document
@@ -67,6 +70,8 @@ addToCart.forEach((btn) => {
         cart.forEach((item) => {
             totalCartQuantity += item.quantity;
         })
+
+ 
         cartQuantity.innerText = totalCartQuantity;
         cartQuantity.style.display = "block";
     })
