@@ -21,7 +21,7 @@ products.forEach((product) => {
 
 document.querySelector(".product-container").innerHTML = productHtml;
 
-
+//  This is a pop-up
 document.querySelectorAll(".product-button").forEach((btn, index) => {
     btn.addEventListener("click", () => {
 
@@ -36,5 +36,6 @@ document.querySelectorAll(".product-button").forEach((btn, index) => {
         }, 1000);
     })
 });
+
 
 
