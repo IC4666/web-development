@@ -1,8 +1,6 @@
 import { products } from "./product-data.js";
 import { cart } from "./cart.js";
 
-console.log(cart);
-
 let productHtml = "";
 products.forEach((product) => {
     document
@@ -49,8 +47,8 @@ let cartQuantity = document.querySelector(".cart-quantity");
 
 addToCart.forEach((btn) => {
     btn.addEventListener("click", () => {
-        // productId = btn.dataset.productId;
-        productId = btn.getAttribute("data-product-id");
+        // let productId = btn.dataset.productId;
+       let productId = btn.getAttribute("data-product-id");
 
         let matchingItem;
         cart.forEach((item) => {
@@ -76,6 +74,7 @@ addToCart.forEach((btn) => {
  
         cartQuantity.innerText = totalCartQuantity;
         cartQuantity.style.display = "block";
+        console.log(cart);
     })
 });
 
