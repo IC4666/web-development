@@ -12,11 +12,11 @@ products.forEach((product) => {
         </div>
         <div class="product-details">
             <h3>${product.name}</h3>
-            <p>Price: ${product.price} taka</p>
-            <p>Color: ${product.color.join(", ")}</p>
-            <p>Brand: ${product.brand}</p>
-            <p>Discount: ${product.discount}%</p>
-            <p>Stock: ${product.stock}</p>
+            <b><p>Price:</b> ${product.price} taka</p>
+            <b><p>Color:</b> ${product.color.join(", ")}</p>
+            <b><p>Brand:</b> ${product.brand}</p>
+            <b><p>Discount:</b> ${product.discount}%</p>
+            <b><p>Stock:</b> ${product.stock}</p>
             <button class="product-button" data-product-id = ${product.id}>Add to cart</button>
         </div>
    </div>`;
