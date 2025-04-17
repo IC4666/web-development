@@ -58,23 +58,37 @@ body {
 }
 
 .checkout-details {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+
+
+    p{  
+        font-size: 1rem;
+        color: rgb(60, 60, 60);
+
+    }
+    .checkout-total-price {
+        font-weight: bold;
+        color: #a30000;
+    }
 }
+
+
 
 button{
     padding: 10px 10px;
     border: none;
     border-radius: 5px;
-    background-color: #459fff;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #007bff;
     cursor: pointer;
+    margin-top: 15px;
 
     &:active {
         scale: 0.9;
     }
 }
 .checkout-delete-btn{
-    background-color: rgb(255, 76, 76);
+    color: rgb(255, 76, 76);
 } 
 
 @media (max-width: 768px) {
@@ -89,6 +103,6 @@ button{
    
     .checkout-details {
         padding-bottom: 10px;
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 }
