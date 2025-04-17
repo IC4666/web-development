@@ -46,8 +46,7 @@ addToCartBtn.forEach((btn, index) => {
 
 // calculating and adding cart quantity to the cart icon
 let DisplayCartQuantity = document.querySelector(".cart-quantity");
-
-if (DisplayCartQuantity.innerText == 0) {
+if (cart.length === 0)  {
     DisplayCartQuantity.style.display = "none";
 }
 

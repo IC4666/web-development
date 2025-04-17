@@ -1,10 +1,10 @@
-import { cart } from './cart.js';
+import { cart, removeFromCart } from './cart.js';
 import { products } from './product-data.js';
 
 let checkoutHtml = "";
-if(checkoutHtml == ""){
-    document.querySelector('.checkout-container').innerHTML= "No item in the cart";
-}
+let checkoutContainer = document.querySelector('.checkout-container');
+
+
 
 cart.forEach((item) => {
 
@@ -16,7 +16,7 @@ cart.forEach((item) => {
     });
 
     checkoutHtml += `
-        <div class="checkout-card">
+        <div class="checkout-card container-${matchingProduct.id}">
             <div class="checkout-image">
                 <img src="images/${matchingProduct.image}" alt="${matchingProduct.name}" loading="lazy">
             </div>
@@ -33,6 +33,24 @@ cart.forEach((item) => {
         </div>`;
 });
 
-document.querySelector('.checkout-container').innerHTML = checkoutHtml;
+checkoutContainer.innerHTML = checkoutHtml;
 
+//Delete button functionality
+let deleteBtn = document.querySelectorAll(".checkout-delete-btn");
+deleteBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        let productId = btn.getAttribute("data-product-id");
+        removeFromCart(productId);
 
+        let container = document.querySelector(`.container-${productId}`);
+        container.remove();
+
+        if (cart.length === 0) {
+            location.reload();
+        }
+    })
+});
+
+if (cart.length === 0) {
+    checkoutContainer.innerHTML = "Empty Cart";
+}
