@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procuct Display</title>
+    <title>Mobile Shop</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,13 +12,13 @@
     <!-- This is a header, where the title and cart icon will be displayed -->
     <header>
         <h2>Mobile Shop</h2>
-        <div class="cart-icon">
+        <a class="cart-icon" href="checkout.html">
             <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#000000">
                 <path
                     d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
             </svg>
             <div class="cart-quantity">0</div>
-        </div>
+        </a>
     </header>
 
     <!-- This is a the product container, where the products will get displayed-->
@@ -63,6 +63,7 @@
 
     <script type = "module" src="scripts/main.js"></script>
     <!-- This is the Entry Point script file, by putting type="module" we are declaring that it will import elements from other files. this is our main js file -->
+    <script type = "module" src="scripts/checkout.js"></script>
 
 </body>
 
