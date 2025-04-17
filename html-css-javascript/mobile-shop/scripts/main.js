@@ -1,5 +1,7 @@
-// import { products } from "./product-data.js";
-// import { cart } from "./cart.js";
+import { products } from "./product-data.js";
+import { cart } from "./cart.js";
+
+console.log(cart);
 
 let productHtml = "";
 products.forEach((product) => {
@@ -26,13 +28,13 @@ products.forEach((product) => {
 document.querySelector(".product-container").innerHTML = productHtml;
 
 //  This is a pop-up
-addToCart = document.querySelectorAll(".product-button");
+let addToCart = document.querySelectorAll(".product-button");
 
 addToCart.forEach((btn, index) => {
     btn.addEventListener("click", () => {
 
-        popupBox = document.querySelector(".pop-up");
-        popupText = document.querySelector(".pop-up-text");
+        let popupBox = document.querySelector(".pop-up");
+        let popupText = document.querySelector(".pop-up-text");
 
         popupText.innerText = "Product number (" + (index + 1) + ") is added to cart";
         popupBox.showModal();
@@ -43,7 +45,7 @@ addToCart.forEach((btn, index) => {
     })
 });
 
-cartQuantity = document.querySelector(".cart-quantity");
+let cartQuantity = document.querySelector(".cart-quantity");
 
 addToCart.forEach((btn) => {
     btn.addEventListener("click", () => {
