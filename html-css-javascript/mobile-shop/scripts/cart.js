@@ -29,14 +29,36 @@ export function removeFromCart(productId) {
     let newCart = [];
 
     cart.forEach((item) => {
-        if (item.productId  !== productId) {
+        if (item.productId !== productId) {
             newCart.push(item);
         }
     })
 
     cart = newCart;
     saveToLocalStorage();
+}
 
-    console.log(cart);
+export function displayCartQuantity() {
+    const cartQuantity = document.querySelector(".cart-quantity");
+
+    if (cart.length === 0) {
+        cartQuantity.style.display = "none";
+    }
+    else {
+        const quantity = calculateTotalQuantity();
+        cartQuantity.innerHTML = quantity;
+        cartQuantity.style.display = "block";
+    }
+}
+
+export function calculateTotalQuantity() {
+    //     let totalCartQuantity = 0;
+    //         cart.forEach((item) => {
+    //             totalCartQuantity += item.quantity;
+    //         });
+    //     return totalCartQuantity;
+
+    // it calculate the total quantity total's initial value is 0
+    return cart.reduce((total, item) => total + item.quantity, 0); 
 }
 
