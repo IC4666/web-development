@@ -41,6 +41,10 @@ function updateCheckoutHeader() {
 
     checkoutDisplayProduct.innerHTML = cart.length;
     checkoutDisplayCartQuantity.innerHTML = calculateTotalQuantity();
+
+    if (cart.length === 0) {
+        checkoutContainer.innerHTML = "Empty Cart";
+    }
 }
 
 //Delete button functionality
@@ -54,8 +58,6 @@ deleteBtn.forEach((btn) => {
         container.remove();
         updateCheckoutHeader();
 
-        if (cart.length === 0) {
-            checkoutContainer.innerHTML = "Empty Cart";
-        }
     })
 });
+
