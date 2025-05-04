@@ -37,10 +37,10 @@ body {
     align-items: center;
 
     button {
-        background-color: yellow;
+        background-color: rgb(255, 238, 0);
         font-weight: bolder;
         color: #a30000;
-        margin-bottom: 5px;
+        margin: 0;
     }
 }
 
@@ -49,7 +49,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    padding: 10px 0;
+    padding: 15px 0;
     border-top: 1px solid #ccc;
 }
 
@@ -59,12 +59,17 @@ body {
 }
 .order-price,
 .order-product{
-        margin: 0;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        border: red solid 2px;
+
+        p{
+            font-size: 1rem;
+            line-height: 2rem;
+            margin: 0;
+            font-weight: bold;
+        }
 }
 
 .checkout-container {

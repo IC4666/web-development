@@ -1,9 +1,8 @@
-import { cart, removeFromCart, calculateTotalQuantity } from './cart.js';
+import { cart, removeFromCart, calculateTotalQuantity, calculateTotalPrice } from './cart.js';
 import { products } from './product-data.js';
 
 let checkoutHtml = "";
 let checkoutContainer = document.querySelector('.checkout-container');
-let totalPrice = 0;
 
 cart.forEach((item) => {
 
@@ -31,9 +30,7 @@ cart.forEach((item) => {
             </div>  
         </div>`;
 
-         totalPrice += matchingProduct.price * item.quantity;
 });
-
 
 
 checkoutContainer.innerHTML = checkoutHtml;
@@ -47,7 +44,7 @@ function updateOrderSummary() {
 
     checkoutDisplayProduct.innerHTML = cart.length;
     checkoutDisplayCartQuantity.innerHTML = calculateTotalQuantity();
-    checkoutDisplayTotalPrice.innerHTML = totalPrice + " taka";
+    checkoutDisplayTotalPrice.innerHTML = calculateTotalPrice()+ " BDT";
 
     if (cart.length === 0) {
         checkoutContainer.innerHTML = "Empty Cart";

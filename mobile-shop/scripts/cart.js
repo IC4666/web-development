@@ -6,7 +6,7 @@ function saveToLocalStorage() {
 };
 
 
-export function addToCart(productId) {
+export function addToCart(productId, productPrice) {
     let matchingItem;
     cart.forEach((item) => {
         if (productId === item.productId) {
@@ -15,10 +15,12 @@ export function addToCart(productId) {
     })
     if (matchingItem) {
         matchingItem.quantity += 1;
+        matchingItem.price = productPrice * matchingItem.quantity;
     } else {
         cart.push({
             productId: productId,
-            quantity: 1
+            quantity: 1,
+            price: productPrice
         });
     }
     saveToLocalStorage();
@@ -60,5 +62,9 @@ export function calculateTotalQuantity() {
 
     // it calculate the total quantity total's initial value is 0
     return cart.reduce((total, item) => total + item.quantity, 0); 
+}
+
+export function calculateTotalPrice() {
+    return cart.reduce((total, item) => total + Number(item.price) , 0);
 }
 

@@ -17,7 +17,7 @@ products.forEach((product) => {
             <b><p>Brand:</b> ${product.brand}</p>
             <b><p>Discount:</b> ${product.discount}%</p>
             <b><p>Stock:</b> ${product.stock}</p>
-            <button class="product-button" data-product-id = ${product.id}>Add to cart</button>
+            <button class="product-button" data-product-id = ${product.id} data-price = ${product.price}>Add to cart</button>
         </div>
    </div>`;
 });
@@ -51,9 +51,11 @@ addToCartBtn.forEach((btn, index) => {
 addToCartBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
         let productId = btn.getAttribute("data-product-id");
+        let productPrice = btn.getAttribute("data-price");
+
         //can also be write like this let productId = btn.dataset.productId;
 
-        addToCart(productId);
+        addToCart(productId, productPrice);
         displayCartQuantity();
     });
 });
