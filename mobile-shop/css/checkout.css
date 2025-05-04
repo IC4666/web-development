@@ -29,33 +29,43 @@ body {
     margin: 20px;
     padding: 5px 20px;
     border-radius: 20px;
+}
 
-    h5{
-        margin: 10px 0;
-    }
+.order-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    h4 {
-        font-weight: bold;
+    button {
+        background-color: yellow;
+        font-weight: bolder;
         color: #a30000;
+        margin-bottom: 5px;
     }
 }
 
 .order-details{
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    align-items: end;
     padding: 10px 0;
     border-top: 1px solid #ccc;
 }
 
-.order-details button {
-    background-color: yellow;
-    font-weight: bolder;
-    color: #a30000;
-    margin-bottom: 5px;
+.order-price {
+        font-weight: bold;
+        color: #a30000;
 }
-
+.order-price,
+.order-product{
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: red solid 2px;
+}
 
 .checkout-container {
     width: 70%;

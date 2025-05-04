@@ -14,14 +14,19 @@
     </h1>
 
     <div class="checkout-order-summary">
-        <h3>Order summary</h3>
+        <div class="order-header">
+            <h3>Order summary</h3>
+            <button>Order Now</button>
+        </div>
         <div class="order-details">
-            <div>
+            <div class="order-product">
                 <h5>Total product (<span class="checkout-cart-product"></span>)</h5>
-                <h5>Total product quantity (<span class="checkout-cart-quantity"></span>)</h5>
-                <h4>Total price : <span class="checkout-cart-price"></span></h4>
+                <h5>Total quantity (<span class="checkout-cart-quantity"></span>)</h5>
             </div>
-            <button>Place your order</button>
+            <div class="order-price">
+                 <p>Total price</p>
+                 <span class="checkout-cart-price"></span>
+            </div>
         </div>
         
     </div>

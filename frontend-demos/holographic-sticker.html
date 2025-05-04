@@ -34,7 +34,6 @@
                 text-justify: inter-word;
                 line-height: 1.6;
             }
-
         }
 
         .image-container {
@@ -42,8 +41,10 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             column-gap: 20px;
-
-            .holographed-text{
+        }
+        
+        h1,
+        .holographed-text{
                 background: linear-gradient(45deg, 
                 rgb(252, 104, 104),
                 rgb(255, 255, 100),
@@ -54,11 +55,24 @@
                 background-size: contain;
                 background-clip: text;
                 color: transparent;
-                display: inline-block;
                 animation: holograph both;
                 animation-timeline: view();
                                
-            } 
+            } .holographed-text{
+                background: linear-gradient(45deg, 
+                rgb(248, 100, 100),
+                rgb(255, 255, 100),
+                rgb(101, 255, 101), 
+                rgb(141, 141, 255),
+                rgb(255, 95, 255)
+                );
+                background-size: contain;
+                background-clip: text;
+                color: transparent;
+                display: inline-block;
+                animation: holograph both;
+                animation-timeline: view();             
+            }
         }
 
         .sparrow{
@@ -97,12 +111,11 @@
             z-index: 2;
             pointer-events: none;
             background: linear-gradient(0deg, 
-                rgb(255, 0, 0),
-                rgb(134, 0, 123),
-                rgb(255, 255, 0),
-                rgb(0, 112, 19), 
-                rgb(0, 68, 255),
-                rgb(88, 112, 0)
+                rgb(248, 100, 100),
+                rgb(255, 255, 61),
+                rgb(101, 255, 101), 
+                rgb(109, 148, 255),
+                rgb(255, 95, 255)
                 );
             
             mix-blend-mode: screen;
@@ -144,7 +157,8 @@
 
 <body>
     <div class="content">
-        <h1>Holographic sticker</h1>
+        <h1>Holographic Sticker</h1>
+        <h2>About Sparrow</h1>
         <p>Sparrows are small, lively birds that have adapted well to urban environments. Their lifespan varies
             depending on species and habitat, but in the wild, they typically live <b>between 2 to 5 years.</b> Some
             individuals can exceed this range under favorable conditions, and in captivity, they may live up to <b>10
