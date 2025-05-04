@@ -19,7 +19,7 @@
             display: grid;
             place-items: center;
             margin: auto;
-            width: min(90%, 700px);
+            width: min(80%, 700px);
         }
 
         .content,
@@ -134,6 +134,14 @@
 
         }
 
+        @media (max-width: 768px) {
+            .image-container {
+                grid-template-columns: 1fr;
+                row-gap: 50px;
+            }
+            
+        }
+
         /*
         animation: slideIn linear;
         animation-timeline: view();
@@ -168,13 +176,18 @@
     </div>
 
     <div class="image-container">
-        <h3 >Sparrow</h3>
-        <h3 class="holographed-text">Holographed</h3>
-        <div class="sparrow">
-            <img src="images/sparrow.jpg" alt="">
+
+        <div>
+            <h3 >Sparrow</h3>
+            <div class="sparrow">
+                <img src="images/sparrow.jpg" alt="">
+            </div>
         </div>
-        <div class="sparrow holographed-sparrow">
-            <img src="images/sparrow.jpg" alt="">
+        <div>
+            <h3 class="holographed-text">Holographed</h3>
+            <div class="sparrow holographed-sparrow">
+                <img src="images/sparrow.jpg" alt="">
+            </div>
         </div>
 
     </div>
