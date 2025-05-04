@@ -29,13 +29,8 @@ body {
     margin: 20px;
     padding: 5px 20px;
     border-radius: 20px;
-    
-    h5{
-        margin: 10px 0;
-    }
-  
-    
 }
+
 .order-header{
     display: flex;
     justify-content: space-between;
@@ -54,10 +49,14 @@ body {
     gap: 10px;
     padding: 10px 0;
     border-top: 1px solid #ccc;
+
+    h5{
+        margin: 10px 0;
+    }
 }
 
 .order-price {
-        
+        margin: 10px 0;
         font-weight: bold;
         color: #a30000;
 }
