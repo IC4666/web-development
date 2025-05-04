@@ -47,7 +47,6 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: repeat (2, 1fr);
-    place-items: center;
     gap: 10px;
     padding: 10px 0;
     border-top: 1px solid #ccc;
