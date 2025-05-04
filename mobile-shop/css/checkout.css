@@ -44,8 +44,10 @@ body {
 }
 
 .order-details{
-    display: flex;
-    justify-content: space-between;
+    width: 100%;
+    display: grid;
+    grid-template-column: repeat (2, 1fr);
+    place-items: center;
     gap: 10px;
     padding: 10px 0;
     border-top: 1px solid #ccc;
