@@ -188,18 +188,18 @@ footer .social-media {
 @keyframes blurAnimation {
     0% {
         filter: blur(20px);
-        /* scale: 0.5; */
+        scale: 0.5;
     }
 
-    20%,
-    80% {
+    10%,
+    90% {
         filter: blur(0px);
-        /* scale: 1; */
+        scale: 1;
     }
 
     100% {
         filter: blur(20px);
-        /* scale: 0; */
+        scale: 0;
     }
 }
 
