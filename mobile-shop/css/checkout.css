@@ -57,11 +57,16 @@ body {
 }
 
 .order-price {
+        
+        font-weight: bold;
+        color: #a30000;
+}
+.order-price,
+.order-product{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        font-weight: bold;
-        color: #a30000;
+        align-items: center;
 }
 
 .checkout-container {
