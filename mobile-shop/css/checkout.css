@@ -29,9 +29,7 @@ body {
     margin: 20px;
     padding: 5px 20px;
     border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-
+    
     h5{
         margin: 10px 0;
     }
@@ -39,14 +37,17 @@ body {
     h4 {
         font-weight: bold;
         color: #a30000;
-    }
-    
+  
     button {
-    background-color: yellow;
-    font-weight: bolder;
-    color: #a30000;
-    margin-bottom: 5px;
+        background-color: yellow;
+        font-weight: bolder;
+        color: #a30000;
+        margin-bottom: 5px;
     }
+}
+.order-header{
+    display: flex;
+    justify-content: space-between;
 }
 
 .order-details{
