@@ -1,0 +1,202 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holograph sticker</title>
+
+    <style>
+        * {
+            /* margin: 0; */
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: grid;
+            place-items: center;
+            margin: auto;
+            width: min(90%, 700px);
+        }
+
+        .content,
+        .image-container {
+            margin: 20px 0;
+        }
+
+
+        .content {
+            p{
+                text-align: justify;
+                text-justify: inter-word;
+                line-height: 1.6;
+            }
+
+        }
+
+        .image-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 20px;
+
+   
+        }
+
+        .sparrow{
+            padding: 0;
+            margin: 0;
+
+            .holographed-text{
+                background: linear-gradient(45deg, 
+                rgb(248, 100, 100),
+                rgb(255, 255, 100),
+                rgb(101, 255, 101), 
+                rgb(141, 141, 255),
+                rgb(255, 95, 255)
+                );
+                background-size: contain;
+                background-clip: text;
+                color: transparent;
+                display: inline-block;
+                animation: holograph both;
+                animation-timeline: view();
+                               
+            }
+        }
+
+        .sparrow img{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border: dotted 2px #000;
+            border-radius: 10px;
+        }
+
+        .holographed-sparrow{
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: auto;
+
+            img{
+                filter: saturate(1) brightness(2) contrast(3) blur(.7px);
+            }
+        }
+
+        .holographed-sparrow::before {
+            content: '';
+            position: absolute;
+            top: 22%;
+            left: 1%;
+            width: 98%;
+            height: 77%;
+            border-radius: 10px;
+            z-index: 2;
+            pointer-events: none;
+            background: linear-gradient(45deg, 
+                rgb(248, 100, 100),
+                rgb(255, 255, 61),
+                rgb(101, 255, 101), 
+                rgb(109, 148, 255),
+                rgb(255, 95, 255)
+                );
+            
+            mix-blend-mode: color-dodge;
+            animation: holograph both;
+            animation-timeline: view();
+       
+        }
+
+        @keyframes holograph {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                filter: hue-rotate(360deg);
+            }
+
+        }
+
+        /*
+        animation: slideIn linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%; 
+        
+        animation: blurAnimation both;
+        animation-timeline: view();
+        view(start%, end5%)
+        */
+
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Holographic sticker</h1>
+        <p>Sparrows are small, lively birds that have adapted well to urban environments. Their lifespan varies
+            depending on species and habitat, but in the wild, they typically live <b>between 2 to 5 years.</b> Some
+            individuals can exceed this range under favorable conditions, and in captivity, they may live up to <b>10
+                years or more.</b>
+        </p>
+        <p>These birds belong to the </b>Passeridae family</b>, with the house sparrow <b>(Passer domesticus)</b> being
+            one of the most familiar species. They thrive in diverse environments, from bustling city streets to remote
+            countryside areas. Sparrows are known for their adaptability, often nesting in buildings and feeding on
+            seeds, grains, and small insects.
+
+            Their survival is influenced by factors such as <b>predation, disease, food availability, and habitat
+                quality.</b> Urban sparrows face threats like pollution and loss of nesting sites, while wild sparrows
+            must evade predators such as birds of prey and domestic cats. Despite these challenges, their resilience and
+            ability to coexist with humans make them one of the most widespread bird species.
+        </p>
+    </div>
+
+    <div class="image-container">
+        <div class="sparrow">
+            <h3 >Sparrow</h3>
+            <img src="images/sparrow.jpg" alt="">
+        </div>
+        <div class="sparrow holographed-sparrow">
+            <h3 class="holographed-text">Holographed</h3>
+            <img src="images/sparrow.jpg" alt="">
+        </div>
+
+    </div>
+
+    <div class="content">
+        <h2>Social Behavior</h2>
+        <p>Sparrows are highly social creatures, often forming <strong>flocks</strong> to forage, roost, and defend
+            territory. They engage in <strong>chirping and calling</strong>, using vocalizations to communicate about
+            food, danger, or mating.</p>
+
+        <h2>Feeding Habits</h2>
+        <p>Sparrows primarily eat <strong>seeds, grains, fruits, and small insects</strong>. Their diet varies depending
+            on habitat—urban sparrows rely on discarded food, while rural sparrows feed on natural grains and insects.
+        </p>
+
+        <h2>Mating & Nesting</h2>
+        <p>During mating season, male sparrows perform <strong>chirping displays and feather puffing</strong> to attract
+            females. They are <strong>monogamous</strong>, often staying with one mate for the season. They build nests
+            in <strong>tree cavities, buildings, rooftops, and air vents</strong> using grass, twigs, feathers, and
+            paper scraps.</p>
+
+        <h2>Flight & Mobility</h2>
+        <p>Sparrows have a <strong>fluttering flight</strong> style with rapid wingbeats, allowing them to maneuver well
+            in tight spaces. Unlike larger birds that glide, sparrows rely on <strong>quick hops and short
+                flights</strong> to navigate their environment.</p>
+
+        <h2>Predators & Survival</h2>
+        <p>Sparrows face threats from <strong>hawks, cats, snakes, and environmental challenges</strong> like pollution
+            and habitat loss. Their ability to hide in dense bushes and buildings helps them survive harsh conditions.
+        </p>
+
+        <h2>Fun Fact!</h2>
+        <p>Sparrows take <strong>dust baths</strong> instead of water baths to keep their feathers clean. They fluff up
+            and wiggle in dry soil or sand, removing parasites and maintaining their plumage.</p>
+    </div>
+</body>
+
+</html>

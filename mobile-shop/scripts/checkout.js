@@ -3,6 +3,7 @@ import { products } from './product-data.js';
 
 let checkoutHtml = "";
 let checkoutContainer = document.querySelector('.checkout-container');
+let totalPrice = 0;
 
 cart.forEach((item) => {
 
@@ -29,18 +30,24 @@ cart.forEach((item) => {
                 <button class="checkout-card-delete-btn" data-product-id = ${matchingProduct.id}>Delete</button>
             </div>  
         </div>`;
+
+         totalPrice += matchingProduct.price * item.quantity;
 });
 
+
+
 checkoutContainer.innerHTML = checkoutHtml;
-updateCheckoutHeader();
+updateOrderSummary();
 
 //  Displaying the total product and product quantity of the cart
-function updateCheckoutHeader() {
+function updateOrderSummary() {
     const checkoutDisplayProduct = document.querySelector(".checkout-cart-product");
     const checkoutDisplayCartQuantity = document.querySelector(".checkout-cart-quantity");
+    const checkoutDisplayTotalPrice = document.querySelector(".checkout-cart-price");
 
     checkoutDisplayProduct.innerHTML = cart.length;
     checkoutDisplayCartQuantity.innerHTML = calculateTotalQuantity();
+    checkoutDisplayTotalPrice.innerHTML = totalPrice + " taka";
 
     if (cart.length === 0) {
         checkoutContainer.innerHTML = "Empty Cart";
@@ -56,7 +63,7 @@ deleteBtn.forEach((btn) => {
 
         let container = document.querySelector(`.container-${productId}`);
         container.remove();
-        updateCheckoutHeader();
+        updateOrderSummary();
 
     })
 });

@@ -22,14 +22,40 @@ body {
     display: block;
 }
 
-.checkout-header{
-    display: flex;
-    gap: 30px;
-    background-color: white;
+.checkout-order-summary {
+    background-color:transparent;
+    border: 1px solid #ccc;
+    width: 70%;
     margin: 20px;
     padding: 5px 20px;
     border-radius: 20px;
+
+    h5{
+        margin: 10px 0;
+    }
+
+    h4 {
+        font-weight: bold;
+        color: #a30000;
+    }
 }
+
+.order-details{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: end;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+}
+
+.order-details button {
+    background-color: yellow;
+    font-weight: bolder;
+    color: #a30000;
+    margin-bottom: 5px;
+}
+
 
 .checkout-container {
     width: 70%;
@@ -81,7 +107,6 @@ body {
     }
 }
 
-
 button{
     padding: 10px 10px;
     border: none;
@@ -99,17 +124,12 @@ button{
     color: rgb(255, 76, 76);
 } 
 
-@media (max-width: 768px) {
-    .checkout-header{
-        flex-direction: column;
-        gap: 0px;
-        /* padding: 0px 10px; */
 
-        h3{
-            padding: 10px;
-            margin: 0;
-        }
-    }
+
+/* Media Queries for Mobile Devices */
+
+@media (max-width: 768px) {
+
     .checkout-container {
         width: 90%;
     }
