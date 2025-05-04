@@ -57,6 +57,9 @@ body {
 }
 
 .order-price {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         font-weight: bold;
         color: #a30000;
 }
