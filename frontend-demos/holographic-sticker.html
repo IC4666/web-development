@@ -29,7 +29,7 @@
 
 
         .content {
-            p{
+            p {
                 text-align: justify;
                 text-justify: inter-word;
                 line-height: 1.6;
@@ -42,60 +42,44 @@
             grid-template-columns: repeat(2, 1fr);
             column-gap: 20px;
         }
-        
+
         h1,
-        .holographed-text{
-                background: linear-gradient(45deg, 
-                rgb(252, 104, 104),
-                rgb(255, 255, 100),
-                rgb(101, 255, 101), 
-                rgb(141, 141, 255),
-                rgb(255, 95, 255)
-                );
-                background-size: contain;
-                background-clip: text;
-                color: transparent;
-                animation: holograph both;
-                animation-timeline: view();
-                               
-            } .holographed-text{
-                background: linear-gradient(45deg, 
-                rgb(248, 100, 100),
-                rgb(255, 255, 100),
-                rgb(101, 255, 101), 
-                rgb(141, 141, 255),
-                rgb(255, 95, 255)
-                );
-                background-size: contain;
-                background-clip: text;
-                color: transparent;
-                display: inline-block;
-                animation: holograph both;
-                animation-timeline: view();             
-            }
+        .holographed-text {
+            background: linear-gradient(45deg,
+                    rgb(252, 104, 104),
+                    rgb(255, 255, 100),
+                    rgb(101, 255, 101),
+                    rgb(141, 141, 255),
+                    rgb(255, 95, 255));
+            background-size: contain;
+            background-clip: text;
+            color: transparent;
+            animation: holograph both;
+            animation-timeline: view();
+
         }
 
-        .sparrow{
+        .sparrow {
             border: dotted 2px #000000;
             border-radius: 10px;
 
-        img{
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 10px;
-            /* filter: saturate(1) brightness(1.5) contrast(1.5); */
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                border-radius: 10px;
+                /* filter: saturate(1) brightness(1.5) contrast(1.5); */
 
+            }
         }
-    }
 
-        .holographed-sparrow{
+        .holographed-sparrow {
             position: relative;
             z-index: 1;
             width: 100%;
             height: auto;
 
-            img{
+            img {
                 filter: saturate(.5) brightness(3) contrast(10);
             }
         }
@@ -110,24 +94,24 @@
             border-radius: 10px;
             z-index: 2;
             pointer-events: none;
-            background: linear-gradient(0deg, 
-                rgb(248, 100, 100),
-                rgb(255, 255, 61),
-                rgb(101, 255, 101), 
-                rgb(109, 148, 255),
-                rgb(255, 95, 255)
-                );
-            
+            background: linear-gradient(0deg,
+                    rgb(255, 0, 0),
+                    rgba(136, 136, 0, 0.822),
+                    rgb(2, 253, 2),
+                    rgb(0, 36, 134),
+                    rgb(255, 139, 255));
+
             mix-blend-mode: screen;
             animation: holograph both;
             animation-timeline: view();
-       
+
         }
 
         @keyframes holograph {
             0% {
                 filter: hue-rotate(0deg);
             }
+
             100% {
                 filter: hue-rotate(360deg);
             }
@@ -139,7 +123,7 @@
                 grid-template-columns: 1fr;
                 row-gap: 50px;
             }
-            
+
         }
 
         /*
@@ -151,7 +135,6 @@
         animation-timeline: view();
         view(start%, end5%)
         */
-
     </style>
 </head>
 
@@ -159,27 +142,31 @@
     <div class="content">
         <h1>Holographic Sticker</h1>
         <h2>About Sparrow</h1>
-        <p>Sparrows are small, lively birds that have adapted well to urban environments. Their lifespan varies
-            depending on species and habitat, but in the wild, they typically live <b>between 2 to 5 years.</b> Some
-            individuals can exceed this range under favorable conditions, and in captivity, they may live up to <b>10
-                years or more.</b>
-        </p>
-        <p>These birds belong to the </b>Passeridae family</b>, with the house sparrow <b>(Passer domesticus)</b> being
-            one of the most familiar species. They thrive in diverse environments, from bustling city streets to remote
-            countryside areas. Sparrows are known for their adaptability, often nesting in buildings and feeding on
-            seeds, grains, and small insects.
+            <p>Sparrows are small, lively birds that have adapted well to urban environments. Their lifespan varies
+                depending on species and habitat, but in the wild, they typically live <b>between 2 to 5 years.</b> Some
+                individuals can exceed this range under favorable conditions, and in captivity, they may live up to
+                <b>10
+                    years or more.</b>
+            </p>
+            <p>These birds belong to the </b>Passeridae family</b>, with the house sparrow <b>(Passer domesticus)</b>
+                being
+                one of the most familiar species. They thrive in diverse environments, from bustling city streets to
+                remote
+                countryside areas. Sparrows are known for their adaptability, often nesting in buildings and feeding on
+                seeds, grains, and small insects.
 
-            Their survival is influenced by factors such as <b>predation, disease, food availability, and habitat
-                quality.</b> Urban sparrows face threats like pollution and loss of nesting sites, while wild sparrows
-            must evade predators such as birds of prey and domestic cats. Despite these challenges, their resilience and
-            ability to coexist with humans make them one of the most widespread bird species.
-        </p>
+                Their survival is influenced by factors such as <b>predation, disease, food availability, and habitat
+                    quality.</b> Urban sparrows face threats like pollution and loss of nesting sites, while wild
+                sparrows
+                must evade predators such as birds of prey and domestic cats. Despite these challenges, their resilience
+                and
+                ability to coexist with humans make them one of the most widespread bird species.
+            </p>
     </div>
 
     <div class="image-container">
-
         <div>
-            <h3 >Sparrow</h3>
+            <h3>Sparrow</h3>
             <div class="sparrow">
                 <img src="images/sparrow.jpg" alt="">
             </div>
