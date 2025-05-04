@@ -46,7 +46,7 @@ body {
 .order-details{
     width: 100%;
     display: grid;
-    grid-template-column: repeat (2, 1fr);
+    grid-template-columns: repeat (2, 1fr);
     place-items: center;
     gap: 10px;
     padding: 10px 0;
