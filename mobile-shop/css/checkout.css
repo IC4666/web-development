@@ -34,16 +34,18 @@ body {
         margin: 10px 0;
     }
   
+    
+}
+.order-header{
+    display: flex;
+    justify-content: space-between;
+
     button {
         background-color: yellow;
         font-weight: bolder;
         color: #a30000;
         margin-bottom: 5px;
     }
-}
-.order-header{
-    display: flex;
-    justify-content: space-between;
 }
 
 .order-details{
