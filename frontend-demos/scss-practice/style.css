@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #000000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9;
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, rgb(0, 0, 0) 5%, transparent 20%, transparent 80%, black 95%, black 100%);
+  mask-image: linear-gradient(to bottom, black 0%, rgb(0, 0, 0) 5%, transparent 20%, transparent 80%, black 95%, black 100%);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.content {
+  overflow: scroll;
+  height: 100%;
+  width: 100%;
+  padding: 30px 30px;
+  box-sizing: border-box;
+}
+
+strong {
+  color: brown;
+}
+
+li::marker {
+  color: brown;
+}
+
+.table-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: #fff;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+.table-section h2 {
+  font-weight: 600;
+  color: brown;
+  text-align: center;
+}
+.table-section table {
+  width: 90%;
+  border-collapse: separate;
+  margin: 20px 0;
+  border: 1px solid brown;
+  border-spacing: 0;
+}
+.table-section table tr th {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.table-section table tr > td, .table-section table th {
+  padding: 1rem;
+  border: 1px solid brown;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

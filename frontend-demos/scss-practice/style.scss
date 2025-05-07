@@ -1,0 +1,123 @@
+//variables declaration and initialization
+$bg-color: #000000;
+$primary-color: brown;
+$secondary-color: gray;
+
+$text-regular: #fff;
+$text-primary: brown;
+$text-secondary: gray;
+
+$linear-gradient: linear-gradient(to bottom,
+        black 0%,
+        rgb(0, 0, 0) 5%,
+        transparent 20%,
+        transparent 80%,
+        black 95%,
+        black 100%);
+
+//mixins
+@mixin maskImage() {
+    -webkit-mask-image: $linear-gradient;
+    mask-image: $linear-gradient;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+
+}
+
+@mixin flex-center() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+//styles
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: $bg-color;
+    color: $text-regular;
+    @include flex-center();
+
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9;
+    @include maskImage();
+    //animation: scroll 4s infinite;
+}
+
+.content {
+    overflow: scroll;
+    height: 100%;
+    width: 100%;
+    padding: 30px 30px;
+    box-sizing: border-box;
+}
+
+strong {
+    color: $text-primary;
+}
+
+li::marker {
+    color: $text-primary;
+}
+
+.table-section {
+    @include flex-center();
+    width: 100%;
+    color: $text-regular;
+    box-sizing: border-box;
+    overflow: scroll;
+
+    h2 {
+        font-weight: 600;
+        color: $text-primary;
+        text-align: center;
+    }
+
+    table {
+        width: 90%;
+        border-collapse: separate;
+        margin: 20px 0;
+        border: 1px solid $primary-color;
+        // border-radius: 20px;
+        border-spacing: 0; // Removes the gap between cells
+
+
+        tr th {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        tr > td, th {
+            padding: 1rem;
+            border: 1px solid $primary-color;
+        }
+    }
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}

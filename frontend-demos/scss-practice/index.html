@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Beginner's Guide to SCSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="content">
+
+            <h1>A Beginner's Guide to SCSS: Supercharging Your CSS</h1>
+
+            <p>SCSS (Sassy CSS) is a powerful extension of CSS that brings enhanced functionality, making styling more
+                efficient and maintainable. If you've ever found yourself frustrated with repetitive CSS rules or wished
+                for variables and functions in your stylesheets, SCSS is the solution you've been looking for.</p>
+
+            <h2>What is SCSS?</h2>
+            <p>SCSS is a syntax of <strong>Sass (Syntactically Awesome Stylesheets)</strong>, a preprocessor that
+                extends CSS with features like variables, nested rules, mixins, functions, and more. Unlike traditional
+                CSS, SCSS allows developers to write cleaner, more organized, and reusable styles.</p>
+
+            <h2>Why Use SCSS?</h2>
+            <ul>
+                <li><strong>Variables:</strong> Store reusable values like colors, fonts, and spacing.</li>
+                <li><strong>Nesting:</strong> Write styles in a hierarchical structure, mirroring HTML.</li>
+                <li><strong>Mixins:</strong> Create reusable blocks of styles.</li>
+                <li><strong>Inheritance:</strong> Use <code>@extend</code> to share styles across multiple selectors.
+                </li>
+                <li><strong>Functions & Operators:</strong> Perform calculations directly in stylesheets.</li>
+            </ul>
+
+            <div class="table-section">
+                <h2>SCSS vs. CSS</h2>
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>CSS</th>
+                        <th>SCSS</th>
+                    </tr>
+                    <tr>
+                        <td>Variables</td>
+                        <td>No</td>
+                        <td>Yes (<code>$variable</code>)</td>
+                    </tr>
+                    <tr>
+                        <td>Nesting</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Mixins</td>
+                        <td>No</td>
+                        <td>Yes (<code>@mixin</code>)</td>
+                    </tr>
+                    <tr>
+                        <td>Functions</td>
+                        <td>No</td>
+                        <td>Yes (<code>lighten()</code>, <code>darken()</code>, etc.)</td>
+                    </tr>
+                    <tr>
+                        <td>Partials & Imports</td>
+                        <td>Limited</td>
+                        <td>Yes (<code>@import</code>, <code>@use</code>)</td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <h2>Getting Started with SCSS</h2>
+            <p>To use SCSS, you need a <strong>Sass compiler</strong> to convert SCSS files into standard CSS. You can
+                install Sass using npm:</p>
+            <pre><code>npm install -g sass</code></pre>
+            <p>Then, compile your SCSS file into CSS:</p>
+            <pre><code>sass styles.scss styles.css</code></pre>
+
+            <h2>SCSS Features in Action</h2>
+
+            <h3>1. Variables</h3>
+            <pre><code>
+$primary-color: #3498db;
+$font-stack: 'Arial', sans-serif;
+
+body {
+    color: $primary-color;
+    font-family: $font-stack;
+}
+    </code></pre>
+
+            <h3>2. Nesting</h3>
+            <pre><code>
+nav {
+    ul {
+        list-style: none;
+        li {
+            display: inline-block;
+            a {
+                text-decoration: none;
+                color: #333;
+            }
+        }
+    }
+}
+    </code></pre>
+
+            <h3>3. Mixins</h3>
+            <pre><code>
+@mixin button($bg-color) {
+    background-color: $bg-color;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    @include button(#3498db);
+}
+    </code></pre>
+
+            <h3>4. Extend (Inheritance)</h3>
+            <pre><code>
+%base-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn {
+    @extend %base-button;
+    background-color: #3498db;
+}
+    </code></pre>
+
+            <h2>Best Practices for SCSS</h2>
+            <ul>
+                <li><strong>Use variables for consistency</strong> (colors, fonts, spacing).</li>
+                <li><strong>Organize styles using partials</strong> (<code>_buttons.scss</code>,
+                    <code>_header.scss</code>).</li>
+                <li><strong>Avoid deep nesting</strong> (keep it manageable).</li>
+                <li><strong>Use mixins for reusable styles</strong> instead of repeating code.</li>
+                <li><strong>Leverage functions for dynamic styling</strong>.</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>SCSS is a game-changer for front-end developers, making CSS more powerful and maintainable. By using
+                variables, nesting, mixins, and inheritance, you can write cleaner, more efficient styles. Whether
+                you're working on a small project or a large-scale application, SCSS will streamline your workflow and
+                improve your code quality.</p>
+
+            <p>Are you ready to supercharge your CSS with SCSS? 🚀 Let me know if you need help getting started!</p>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
