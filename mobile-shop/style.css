@@ -12,6 +12,7 @@
 }
 
 body {
+    background: url("https://mir-s3-cdn-cf.behance.net/project_modules/fs/dece5f124024167.60fb03546918b.gif") no-repeat center/cover;
     background-color: rgb(233, 233, 233);
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
